@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="{!! asset('images/favicon.png')!!}">
-    @yield('css')
-    @stack('css')
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AccountManager</title>
+
+  <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
+  <script src="{{asset('resources/js/bootstrap/jquery-3.5.1.min.js')}}"></script>
+
 </head>
-
 <body>
-    <h1>xyz</h1>
-    @yield('content')
-<!--     <script src="{{ mix('/js/users/app.js') }}"></script> -->
-    @yield('script')
-    <!-- @stack('scripts') -->
-</body>
 
+  @yield('content')
+
+  <script src="{{asset('js/bootstrap/addons/datatables.min.js')}}"></script>
+</body>
 </html>

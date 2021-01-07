@@ -1,33 +1,54 @@
-@extends('accountmanager::layouts.master')
+@extends('layouts.master')
 
-@section('NoiDung')
-<div class="main">
-  <div class="loading">Carousel is loading...</div>
-  <div class="container">
-    <div class="synch-carousels">
-      <div class="left child">
-        <div class="gallery">
-          
-        </div>
-      </div>
-      <div class="right child">
-        <div class="gallery2">
-          
-        </div>
-        <div class="nav-arrows">
-          <button class="arrow-left">
-            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-caret-left-fill" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-            </svg>
-          </button>
-          <button class="arrow-right">
-            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+@section('content')
+<button class="btn-add">Add New</button>
+
+<table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+  <thead>
+    <tr class="table-header">
+      <th class="th-sm"> dsfdsf
+      </th>
+      <th class="th-sm">Tên CTy
+      </th>
+      <th class="th-sm">Tên Domain
+      </th>
+      <th class="th-sm">Tên Ứng Dụng
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="th-sm">
+      </th>
+      <th class="th-sm">Tên CTy hhh
+      </th>
+      <th class="th-sm">Tên Domain
+      </th>
+      <th class="th-sm">Tên Ứng Dụng
+      </th>
+    </tr>
+    <tr>
+      <th class="th-sm">
+      </th>
+      <th class="th-sm">Tên CTy
+      </th>
+      <th class="th-sm">Tên Domain
+      </th>
+      <th class="th-sm">Tên Ứng Dụng
+      </th>
+    </tr>
+  </tbody>
+</table>
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+  $('#dtBasicExample').DataTable({
+        "scrollX": true,
+        "responsive": false,
+    });
+
+});
+</script>
+
 @endsection
