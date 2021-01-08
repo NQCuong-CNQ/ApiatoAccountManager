@@ -2,6 +2,8 @@
 
 namespace App\Containers\AccountManager\UI\API\Controllers;
 
+use App\Containers\AccountManager\Data\Transporters\ProxyGetAllAccountManagerTransporter;
+
 use App\Containers\AccountManager\UI\API\Requests\CreateAccountManagerRequest;
 use App\Containers\AccountManager\UI\API\Requests\DeleteAccountManagerRequest;
 use App\Containers\AccountManager\UI\API\Requests\GetAllAccountManagersRequest;
@@ -24,9 +26,38 @@ class Controller extends ApiController
      */
     public function createAccountManager(CreateAccountManagerRequest $request)
     {
-        $accountmanager = Apiato::call('AccountManager@CreateAccountManagerAction', [$request]);
+        // $params = [
+        //     "id"            => $request->id,
+        //     "app_brand"            => $request->app_brand,
+        //     "app_code"           => $request->app_code,
+        //     "domain_name"       => $request->domain_name,
+        //     "site_name"     => $request->site_name,
+        //     "base_url"           => $request->base_url,
+        //     "company_name"           => $request->company_name,
+        // ];
 
-        return $this->created($this->transform($accountmanager, AccountManagerTransformer::class));
+        // // lấy danh sách cấu thành địa chỉ
+        // $result = Apiato::call('AccountManager@CreateAccountManagerAction', [new ProxyCreateAccountManagerTransporter($params)]);
+        // $data   = $this->transform($result, AccountManagerTransformer::class);
+
+        // // thông tin phân trang
+        // // $meta       = $data['meta'];
+        // // $pagination = $meta["pagination"] ?: [];
+        // // unset($meta["pagination"]);
+        // // $data       = $data['data'] ?: [];
+
+        // // trả về dữ liệu response
+        // return response()->json([
+        //     'success'     => true,
+        //     'STATUS'      => "OK",
+        //     'status_code' => 200,
+        //     // 'message'     => trans('address::address-component.api.list_all_address_components'),
+        //     'data'        => $data,
+        //     // 'pagination'  => $pagination,
+        //     // 'meta'        => $meta,
+        // ], 200);
+
+        // return $this->created($this->transform($accountmanager, AccountManagerTransformer::class));
     }
 
     /**
@@ -46,9 +77,36 @@ class Controller extends ApiController
      */
     public function getAllAccountManagers(GetAllAccountManagersRequest $request)
     {
-        $accountmanagers = Apiato::call('AccountManager@GetAllAccountManagersAction', [$request]);
+        $params = [
+            "id"            => $request->id,
+            "app_brand"            => $request->app_brand,
+            "app_code"           => $request->app_code,
+            "domain_name"       => $request->domain_name,
+            "site_name"     => $request->site_name,
+            "base_url"           => $request->base_url,
+            "company_name"           => $request->company_name,
+        ];
 
-        return $this->transform($accountmanagers, AccountManagerTransformer::class);
+        // lấy danh sách cấu thành địa chỉ
+        $result = Apiato::call('AccountManager@GetAllAccountManagerAction', [new ProxyGetAllAccountManagerTransporter($params)]);
+        $data   = $this->transform($result, AccountManagerTransformer::class);
+
+        // thông tin phân trang
+        // $meta       = $data['meta'];
+        // $pagination = $meta["pagination"] ?: [];
+        // unset($meta["pagination"]);
+        // $data       = $data['data'] ?: [];
+
+        // trả về dữ liệu response
+        return response()->json([
+            'success'     => true,
+            'STATUS'      => "OK",
+            'status_code' => 200,
+            // 'message'     => trans('address::address-component.api.list_all_address_components'),
+            'data'        => $data,
+            // 'pagination'  => $pagination,
+            // 'meta'        => $meta,
+        ], 200);
     }
 
     /**

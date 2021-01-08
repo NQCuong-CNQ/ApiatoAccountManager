@@ -11,7 +11,13 @@ class AccountManager extends Model
     public $timestamps = false;
 
     protected $fillable = [
-
+        'id',
+        'app_brand',
+        'app_code',
+        'domain_name',
+        'site_name',
+        'base_url',
+        'company_name',
     ];
 
     protected $attributes = [

@@ -26,10 +26,8 @@ class Controller extends WebController
      */
     public function index(GetAllAccountManagersRequest $request)
     {
-        $accountmanagers = Apiato::call('AccountManager@GetAllAccountManagersAction', [$request]);
 
-        // ..
-        return view('accountmanager::pages.mainpage')->with('accountmanagers', $accountmanagers);
+        return view('accountmanager::pages.mainpage');
     }
 
     /**

@@ -23,7 +23,7 @@
 $router->get('accountmanagers', [
     'as' => 'api_accountmanager_get_all_account_managers',
     'uses'  => 'Controller@getAllAccountManagers',
-    'middleware' => [
-      'auth:api',
-    ],
+    // 'middleware' => [
+    //   'auth:api',
+    // ],
 ]);
