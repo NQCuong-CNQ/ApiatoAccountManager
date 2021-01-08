@@ -6,6 +6,10 @@ use App\Ship\Parents\Models\Model;
 
 class AccountManager extends Model
 {
+    protected $table ='tbl_domain_config';
+    
+    public $timestamps = false;
+
     protected $fillable = [
 
     ];

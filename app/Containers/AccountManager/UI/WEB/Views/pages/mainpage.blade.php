@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<button class="btn-add">Add New</button>
+<button onclick="location.href='{{ route ('addNew')}}'" class="btn-add">Add New</button>
 
 <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
   <thead>
@@ -17,26 +17,14 @@
     </tr>
   </thead>
   <tbody>
+    @foreach($accountmanagers as $accountmanager)
     <tr>
-      <th class="th-sm">
-      </th>
-      <th class="th-sm">Tên CTy hhh
-      </th>
-      <th class="th-sm">Tên Domain
-      </th>
-      <th class="th-sm">Tên Ứng Dụng
-      </th>
+      <td></td>
+      <td>{{$accountmanager['company_name']}}</td>
+      <td>{{$accountmanager['domain_name']}}</td>
+      <td>{{$accountmanager['destination']}}</td>
     </tr>
-    <tr>
-      <th class="th-sm">
-      </th>
-      <th class="th-sm">Tên CTy
-      </th>
-      <th class="th-sm">Tên Domain
-      </th>
-      <th class="th-sm">Tên Ứng Dụng
-      </th>
-    </tr>
+    @endforeach
   </tbody>
 </table>
 
