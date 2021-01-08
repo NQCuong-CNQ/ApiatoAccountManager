@@ -1,3 +1,38 @@
+button{
+	padding: 0.4rem 1rem;
+	border-radius: 5px !important;
+	border-width: 1px;
+}
+body{
+	padding: 2rem;
+}
 .btn-add{
-	background-color: green;
+	background-color: #14c7ac;
+	color: white;
+}
+.btn-back{
+	background-color: #1372bf;
+	color: white;
+}
+.btn-save{
+	background-color: #14c7ac;
+	color: white;
+}
+.label-addnew-container{
+	max-width: 350px;
+	width: 40%;
+	text-align: right;
+	padding-right: 1rem;
+	color: gray;
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+.input-addnew-container p{
+	color: gray;
+	font-size: 1.1rem;
+}
+.input-addnew-container input{
+	width: 100%;
+	font-size: 1.1rem;
+	padding: 0.3rem 0.7rem;
 }
