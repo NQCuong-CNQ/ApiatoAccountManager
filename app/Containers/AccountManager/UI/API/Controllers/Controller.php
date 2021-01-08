@@ -77,10 +77,36 @@ class Controller extends ApiController
      */
     public function getAllAccountManagers(GetAllAccountManagersRequest $request)
     {
-        $accountmanager = Apiato::call('AccountManager@GetAllAccountManagerAction', [$request]);
+        $params = [
+            "id"                    => $request->id,
+            "app_brand"             => $request->app_brand,
+            "app_code"              => $request->app_code,
+            "domain_name"           => $request->domain_name,
+            "site_name"             => $request->site_name,
+            "base_url"              => $request->base_url,
+            "company_name"          => $request->company_name,
+        ];
 
-        return $this->transform($accountmanager, AccountManagerTransformer::class);
+        // lấy danh sách cấu thành địa chỉ
+        $result = Apiato::call('AccountManager@GetAllAccountManagersAction', [new ProxyGetAllAccountManagerTransporter($params)]);
+        $data   = $this->transform($result, AccountManagerTransformer::class);
 
+        // thông tin phân trang
+        $meta       = $data['meta'];
+        $pagination = $meta["pagination"] ?: [];
+        unset($meta["pagination"]);
+        $data       = $data['data'] ?: [];
+
+        // trả về dữ liệu response
+        return response()->json([
+            'success'     => true,
+            'STATUS'      => "OK",
+            'status_code' => 200,
+            // 'message'     => trans('address::address-component.api.list_all_address_components'),
+            'data'        => $data,
+            'pagination'  => $pagination,
+            'meta'        => $meta,
+        ], 200);
     }
 
     /**

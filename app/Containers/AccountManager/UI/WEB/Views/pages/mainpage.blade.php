@@ -32,6 +32,16 @@ $(document).ready(function () {
     });
 
 });
+
+$.ajax({
+            url: "http://api.apiatoaccountmanager/v1/accountmanagers",
+            type: 'GET',
+            dataType: 'json',
+            success: function(res) {
+               alert(res);
+            }
+        });
+
 </script>
 
 @endsection
