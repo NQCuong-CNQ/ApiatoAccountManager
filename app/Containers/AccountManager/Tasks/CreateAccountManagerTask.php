@@ -6,6 +6,7 @@ use App\Containers\AccountManager\Data\Repositories\AccountManagerRepository;
 use App\Ship\Exceptions\CreateResourceFailedException;
 use App\Ship\Parents\Tasks\Task;
 use Exception;
+use App\Ship\Transporters\DataTransporter;
 
 class CreateAccountManagerTask extends Task
 {
@@ -17,13 +18,28 @@ class CreateAccountManagerTask extends Task
         $this->repository = $repository;
     }
 
-    public function run(array $data)
+    public function run(DataTransporter $data)
     {
-        try {
-            return $this->repository->create($data);
-        }
-        catch (Exception $exception) {
-            throw new CreateResourceFailedException();
-        }
+        var_dump($data->app_brand);
+        // try {
+
+        //     $accountManager = $this->repository->create([
+
+        //         'app_brand'         => $data->$app_brand,
+
+        //         'app_code'         => $data->$app_code,
+
+        //         'domain_name'         => $data->domain_name,
+
+        //         'site_name'        => $data->site_name,
+  
+        //         'base_url'    => $data->base_url,
+        //     ]);
+
+        // } catch (Throwable $e) {
+
+        //     throw new CreateResourceFailedException($e->getMessage());
+        // }
+        // return $accountManager;
     }
 }

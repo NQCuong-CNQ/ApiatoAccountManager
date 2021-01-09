@@ -3,6 +3,7 @@
 namespace App\Containers\AccountManager\UI\API\Controllers;
 
 use App\Containers\AccountManager\Data\Transporters\ProxyGetAllAccountManagerTransporter;
+use App\Containers\AccountManager\Data\Transporters\ProxyCreateAccountManagerTransporter;
 
 use App\Containers\AccountManager\UI\API\Requests\CreateAccountManagerRequest;
 use App\Containers\AccountManager\UI\API\Requests\DeleteAccountManagerRequest;
@@ -26,25 +27,23 @@ class Controller extends ApiController
      */
     public function createAccountManager(CreateAccountManagerRequest $request)
     {
-        // $params = [
-        //     "id"            => $request->id,
-        //     "app_brand"            => $request->app_brand,
-        //     "app_code"           => $request->app_code,
-        //     "domain_name"       => $request->domain_name,
-        //     "site_name"     => $request->site_name,
-        //     "base_url"           => $request->base_url,
-        //     "company_name"           => $request->company_name,
-        // ];
+        $params = [
+            "app_brand"            => $request->app_brand,
+            "app_code"           => $request->app_code,
+            "domain_name"       => $request->domain_name,
+            "site_name"     => $request->site_name,
+            "base_url"           => $request->base_url,
+        ];
 
-        // // lấy danh sách cấu thành địa chỉ
-        // $result = Apiato::call('AccountManager@CreateAccountManagerAction', [new ProxyCreateAccountManagerTransporter($params)]);
+        // lấy danh sách cấu thành địa chỉ
+        $result = Apiato::call('AccountManager@CreateAccountManagerAction', [new ProxyCreateAccountManagerTransporter($params)]);
         // $data   = $this->transform($result, AccountManagerTransformer::class);
 
         // // thông tin phân trang
-        // // $meta       = $data['meta'];
-        // // $pagination = $meta["pagination"] ?: [];
-        // // unset($meta["pagination"]);
-        // // $data       = $data['data'] ?: [];
+        // $meta       = $data['meta'];
+        // $pagination = $meta["pagination"] ?: [];
+        // unset($meta["pagination"]);
+        // $data       = $data['data'] ?: [];
 
         // // trả về dữ liệu response
         // return response()->json([
@@ -53,11 +52,9 @@ class Controller extends ApiController
         //     'status_code' => 200,
         //     // 'message'     => trans('address::address-component.api.list_all_address_components'),
         //     'data'        => $data,
-        //     // 'pagination'  => $pagination,
-        //     // 'meta'        => $meta,
+        //     'pagination'  => $pagination,
+        //     'meta'        => $meta,
         // ], 200);
-
-        // return $this->created($this->transform($accountmanager, AccountManagerTransformer::class));
     }
 
     /**

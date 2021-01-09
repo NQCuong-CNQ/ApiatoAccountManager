@@ -20,10 +20,10 @@
  */
 
 /** @var Route $router */
-$router->post('accountmanagers', [
+$router->post('create_account_managers', [
     'as' => 'api_accountmanager_create_account_manager',
     'uses'  => 'Controller@createAccountManager',
-    'middleware' => [
-      'auth:api',
-    ],
+    // 'middleware' => [
+    //   'auth:api',
+    // ],
 ]);
