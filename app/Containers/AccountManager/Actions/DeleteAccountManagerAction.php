@@ -10,6 +10,8 @@ class DeleteAccountManagerAction extends Action
 {
     public function run(Request $request)
     {
-        return Apiato::call('AccountManager@DeleteAccountManagerTask', [$request->id]);
+        $result = Apiato::call('AccountManager@DeleteAccountManagerTask', [$request->id]);
+        
+        return $result;
     }
 }

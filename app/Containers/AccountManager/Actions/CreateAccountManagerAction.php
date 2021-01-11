@@ -16,8 +16,7 @@ class CreateAccountManagerAction extends Action
         // ]);
 
         $accountmanager = Apiato::call('AccountManager@CreateAccountManagerTask', [$data]);
-        
 
-        // return $accountmanager;
+        return $accountmanager;
     }
 }

@@ -20,26 +20,25 @@ class CreateAccountManagerTask extends Task
 
     public function run(DataTransporter $data)
     {
-        var_dump($data->app_brand);
-        // try {
+        try {
 
-        //     $accountManager = $this->repository->create([
+            $accountManager = $this->repository->create([
 
-        //         'app_brand'         => $data->$app_brand,
+                'app_brand'         =>  $data->app_brand,
 
-        //         'app_code'         => $data->$app_code,
+                'app_code'         => $data->app_code,
 
-        //         'domain_name'         => $data->domain_name,
+                'domain_name'         => $data->domain_name,
 
-        //         'site_name'        => $data->site_name,
+                'site_name'        => $data->site_name,
   
-        //         'base_url'    => $data->base_url,
-        //     ]);
+                'base_url'    => $data->base_url,
+            ]);
 
-        // } catch (Throwable $e) {
+        } catch (Throwable $e) {
 
-        //     throw new CreateResourceFailedException($e->getMessage());
-        // }
-        // return $accountManager;
+            throw new CreateResourceFailedException($e->getMessage());
+        }
+        return $accountManager;
     }
 }
