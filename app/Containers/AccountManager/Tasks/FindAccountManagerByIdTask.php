@@ -20,10 +20,12 @@ class FindAccountManagerByIdTask extends Task
     public function run($id)
     {
         try {
-            return $this->repository->find($id);
+            $accountManager = $this->repository->find($id);
         }
         catch (Exception $exception) {
             throw new NotFoundException();
         }
+
+        return $accountManager;
     }
 }

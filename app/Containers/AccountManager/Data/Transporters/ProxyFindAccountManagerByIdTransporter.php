@@ -4,7 +4,7 @@ namespace App\Containers\AccountManager\Data\Transporters;
 
 use App\Ship\Parents\Transporters\Transporter;
 
-class FindAccountManagerByIdTransporter extends Transporter
+class ProxyFindAccountManagerByIdTransporter extends Transporter
 {
 
     /**

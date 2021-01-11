@@ -45,3 +45,9 @@ body{
 	font-weight: bold;
 	font-size: 1.1rem;
 }
+.input-radio-addnew-container p{
+	padding-left: 0.5rem;
+}
+.input-radio-addnew-container input{
+	margin-top: 0.4rem;
+}

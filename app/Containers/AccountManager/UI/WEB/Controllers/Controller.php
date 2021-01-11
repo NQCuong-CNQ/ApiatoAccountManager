@@ -27,7 +27,7 @@ class Controller extends WebController
     public function index(GetAllAccountManagersRequest $request)
     {
 
-        return view('accountmanager::pages.mainpage');
+        return view('accountmanager::account-manager.account-manager');
     }
 
     /**
@@ -40,7 +40,7 @@ class Controller extends WebController
         // $accountmanagers = Apiato::call('AccountManager@GetAllAccountManagersAction', [$request]);
 
         // ..
-        return view('accountmanager::pages.add-account-manager');
+        return view('accountmanager::account-manager.detail-account-manager');
     }
 
     /**
@@ -48,11 +48,29 @@ class Controller extends WebController
      *
      * @param FindAccountManagerByIdRequest $request
      */
-    public function show(FindAccountManagerByIdRequest $request)
+    public function show(FindAccountManagerByIdRequest $request, $id)
     {
-        $accountmanager = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$request]);
+        // $accountmanager = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$id]);
 
+        $result = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$id]);
+        
+        // chi tiết cấu thành địa chỉ
+        $accountManager = $result;
+        // return $content
+        //     ->title(trans("address::address-component.headers.find_by_id_address_component"))
+        //     ->row(function($row) use($addressComponent) {
+
+        //         $row->column(view('address::address-component.find-by-id-address-component', [
+        //             "addressComponent"      =>  $addressComponent,
+        //         ]), 12);
+        //     })
+        //     ->component("maps")
+        //     ->component("forms")
+        //     ->component('notification-alert-toast')
+        //     ->component("dropdown-select-multiselect")
+        //     ->component('jsrender')
         // ..
+        return view('accountmanager::account-manager.detail-account-manager')->with('accountManager', $accountManager);
     }
 
     /**

@@ -8,9 +8,9 @@ use Apiato\Core\Foundation\Facades\Apiato;
 
 class DeleteAccountManagerAction extends Action
 {
-    public function run(Request $request)
+    public function run($id)
     {
-        $result = Apiato::call('AccountManager@DeleteAccountManagerTask', [$request->id]);
+        $result = Apiato::call('AccountManager@DeleteAccountManagerTask', [$id]);
         
         return $result;
     }

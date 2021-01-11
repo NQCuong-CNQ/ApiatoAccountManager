@@ -8,9 +8,9 @@ use Apiato\Core\Foundation\Facades\Apiato;
 
 class FindAccountManagerByIdAction extends Action
 {
-    public function run(Request $request)
+    public function run($id)
     {
-        $accountmanager = Apiato::call('AccountManager@FindAccountManagerByIdTask', [$request->id]);
+        $accountmanager = Apiato::call('AccountManager@FindAccountManagerByIdTask', [$id]);
 
         return $accountmanager;
     }

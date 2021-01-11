@@ -27,6 +27,7 @@ class Controller extends ApiController
      */
     public function createAccountManager(CreateAccountManagerRequest $request)
     {
+        // var_dump($request->app_brand);
         $params = [
             "app_brand"            => $request->app_brand,
             "app_code"           => $request->app_code,
@@ -63,9 +64,20 @@ class Controller extends ApiController
      */
     public function findAccountManagerById(FindAccountManagerByIdRequest $request)
     {
-        $accountmanager = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$request]);
+        $result = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$request]);
+        $data = $this->transform($result, AddressComponentTransformer::class);
+        // lấy dữ liệu chi tiết địa chỉ
+        $addressComponent = $data['data'] ?: [];
+        // trả về dữ liệu response
+        return response()->json([
+            'success'       => true,
+            'STATUS'        => "OK",
+            'status_code'   => 200,
+            // 'message'       => trans('address::address-component.api.find_by_id_address_component'),
+            'data'          => $addressComponent,
+        ], 200);
 
-        return $this->transform($accountmanager, AccountManagerTransformer::class);
+        $accountmanager = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$request]);
     }
 
     /**
@@ -139,9 +151,9 @@ class Controller extends ApiController
      * @param DeleteAccountManagerRequest $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function deleteAccountManager(DeleteAccountManagerRequest $request)
+    public function deleteAccountManager(DeleteAccountManagerRequest $request, $id)
     {
-        $result = Apiato::call('AccountManager@DeleteAccountManagerAction', [$request]);
+        $result = Apiato::call('AccountManager@DeleteAccountManagerAction', [$id]);
         // trả về dữ liệu response
         return response()->json([
             'success'       => true,

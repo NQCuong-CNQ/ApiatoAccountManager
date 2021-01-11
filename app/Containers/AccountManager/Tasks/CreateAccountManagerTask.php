@@ -26,13 +26,13 @@ class CreateAccountManagerTask extends Task
 
                 'app_brand'         =>  $data->app_brand,
 
-                'app_code'         => $data->app_code,
+                'app_code'          => $data->app_code,
 
-                'domain_name'         => $data->domain_name,
+                'domain_name'       => $data->domain_name,
 
-                'site_name'        => $data->site_name,
+                'site_name'         => $data->site_name,
   
-                'base_url'    => $data->base_url,
+                'base_url'          => $data->base_url,
             ]);
 
         } catch (Throwable $e) {

@@ -47,16 +47,31 @@
     <p>Chọn loại ứng dụng</p>
   </div>
   <div class="input-radio-addnew-container">
-  {!! Form::text('app_brand', 'app_brand')!!}
+<div>
+    {{ Form::radio('app_brand', '1', false, array('id'=>'app_brand_pmv')) }}
+  {{ Form::label('app_brand_pmv', 'Phần mềm vé') }}
+</div>
+<div>
+    {{ Form::radio('app_brand', '2', false, array('id'=>'app_brand_wpmv')) }}
+  {{ Form::label('app_brand_wpmv', 'Website phần mềm vé') }}
+</div>
+<div>
+      {{ Form::radio('app_brand', '3', false, array('id'=>'app_brand_pmh')) }}
+  {{ Form::label('app_brand_pmh', 'Phần mềm hàng') }}
+</div>
+<div>
+      {{ Form::radio('app_brand', '4', false, array('id'=>'app_brand_tpmh')) }}
+  {{ Form::label('app_brand_tpmh', 'Tracking phần mềm hàng') }}
+</div>
+<div>
+      {{ Form::radio('app_brand', '5', false, array('id'=>'app_brand_ns')) }}
+  {{ Form::label('app_brand_ns', 'Nhân sự') }}
+</div>
+<div>
+    {{ Form::radio('app_brand', '6', false, array('id'=>'app_brand_m')) }}
+  {{ Form::label('app_brand_m', 'Manual (tự cấu hình)') }}
+</div>
 
-    <form action="">
-      <input type="radio" name="gender" value="male"> Phần mềm vé<br>
-      <input type="radio" name="gender" value="female"> Website phần mềm vé<br>
-      <input type="radio" name="gender" value="other"> Phần mềm hàng<br>
-      <input type="radio" name="gender" value="male"> Tracking phần mềm hàng<br>
-      <input type="radio" name="gender" value="female"> Nhân sự<br>
-      <input type="radio" name="gender" value="other"> Manual (tự cấu hình)<br>
-    </form>
   </div>
 </div>
 <div class="d-flex mt-3">
