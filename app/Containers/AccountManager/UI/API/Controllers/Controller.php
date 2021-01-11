@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * @todo: controller xử lý các nghiệp vụ liên quan đến quản lý AccountManager bằng APIs,
+ * - Lay danh sách cấu thành địa chỉ AddressComponent (listAllAddressComponents())
+ * - Cap nhat cấu thành địa chỉ AddressComponent (updateAddressComponent())
+ * - Thêm mới cấu thành địa chỉ AddressComponent (storeAddressComponent())
+ * - Xóa cấu thành địa chỉ AddressComponent (deleteAddressComponent())
+ * - cập nhật trạng thái cấu thành địa chỉ AddressComponent (changeStatusAddressComponent())
+ */
 namespace App\Containers\AccountManager\UI\API\Controllers;
 
 use App\Containers\AccountManager\Data\Transporters\ProxyGetAllAccountManagerTransporter;
@@ -22,12 +29,32 @@ use Apiato\Core\Foundation\Facades\Apiato;
 class Controller extends ApiController
 {
     /**
-     * @param CreateAccountManagerRequest $request
-     * @return \Illuminate\Http\JsonResponse
+     * @todo Lấy danh sách cấu thành địa chỉ
+     * - lấy danh sách tất cả cấu thành địa chỉ
+     * @author Quốc Dũng
+     * @param Request $request
+     * search dùng cho chức năng search tự động theo keyword các field được định nghĩa trong $fieldSearchable AddressComponentRepository
+     * address_component_code : tên cấu thành địa chỉ
+     * address_component_name : mã cấu thành địa chỉ
+     * address_component_alias : tên không dấu / alias để matching dữ liệu cho dễ
+     * address_component_post_code : mã postcode
+     * page lấy dữ liệu theo trang nào
+     * limit lấy giới hạn mỗi trang bao nhiêu dữ liệu
+     * search lọc bằng datatables
+     * include : lấy bảng khóa ngoại của cấu thành địa chỉ
+     * @since 18-05-2020
+     * @algorithm
+     *  - Gọi đến action ListAllAddressComponentsAction --> task GetAllAddressComponentsTask
+     *  - Giao tiếp với CSLD tbl_location bằng AddressComponentRepository để lấy mảng danh sách cấu thành địa chỉ
+     *  - Lấy dữ liệu trả về từ action format bằng AddressComponentTransformer
+     *  - Render ra view danh sách cấu thành địa chỉ bằng dữ liệu đã được format
+     * @change Dũng 08/06/2020
+     * thêm phần phân trang cho serverside datatables
+     * params['limit'] : nếu truyền vào sẽ lấy danh sách cấu thành địa chỉ phân trang bằng $params['limit']
+     * - Giao tiếp với CSLD tbl_location bằng AddressComponentRepository để đếm mảng danh sách cấu thành địa chỉ
      */
     public function createAccountManager(CreateAccountManagerRequest $request)
     {
-        // var_dump($request->app_brand);
         $params = [
             "app_brand"            => $request->app_brand,
             "app_code"           => $request->app_code,
@@ -59,8 +86,16 @@ class Controller extends ApiController
     }
 
     /**
-     * @param FindAccountManagerByIdRequest $request
-     * @return array
+     * @todo Màn hình form thêm mới partner
+     * - Trả về màn hình thêm mới partner
+     * @author Nguyễn Chiến
+     * @param Request $request
+     * @since 21/09/2020
+     * @return Content
+     * - view form thêm mới partner
+     * @algorithm 
+     * _ phần này không có xử lý nghiệp vụ nên không gọi Action và Task
+     * _ Chỉ trả về view form cho người dùng thêm mới partner
      */
     public function findAccountManagerById(FindAccountManagerByIdRequest $request)
     {
@@ -81,8 +116,16 @@ class Controller extends ApiController
     }
 
     /**
-     * @param GetAllAccountManagersRequest $request
-     * @return array
+     * @todo Màn hình form thêm mới partner
+     * - Trả về màn hình thêm mới partner
+     * @author Nguyễn Chiến
+     * @param Request $request
+     * @since 21/09/2020
+     * @return Content
+     * - view form thêm mới partner
+     * @algorithm 
+     * _ phần này không có xử lý nghiệp vụ nên không gọi Action và Task
+     * _ Chỉ trả về view form cho người dùng thêm mới partner
      */
     public function getAllAccountManagers(GetAllAccountManagersRequest $request)
     {
@@ -119,8 +162,16 @@ class Controller extends ApiController
     }
 
     /**
-     * @param UpdateAccountManagerRequest $request
-     * @return array
+     * @todo Màn hình form thêm mới partner
+     * - Trả về màn hình thêm mới partner
+     * @author Nguyễn Chiến
+     * @param Request $request
+     * @since 21/09/2020
+     * @return Content
+     * - view form thêm mới partner
+     * @algorithm 
+     * _ phần này không có xử lý nghiệp vụ nên không gọi Action và Task
+     * _ Chỉ trả về view form cho người dùng thêm mới partner
      */
     public function updateAccountManager(UpdateAccountManagerRequest $request)
     {
@@ -148,8 +199,16 @@ class Controller extends ApiController
     }
 
     /**
-     * @param DeleteAccountManagerRequest $request
-     * @return \Illuminate\Http\JsonResponse
+     * @todo Màn hình form thêm mới partner
+     * - Trả về màn hình thêm mới partner
+     * @author Nguyễn Chiến
+     * @param Request $request
+     * @since 21/09/2020
+     * @return Content
+     * - view form thêm mới partner
+     * @algorithm 
+     * _ phần này không có xử lý nghiệp vụ nên không gọi Action và Task
+     * _ Chỉ trả về view form cho người dùng thêm mới partner
      */
     public function deleteAccountManager(DeleteAccountManagerRequest $request, $id)
     {
