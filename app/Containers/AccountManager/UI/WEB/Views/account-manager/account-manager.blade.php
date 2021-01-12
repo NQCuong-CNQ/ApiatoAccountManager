@@ -2,7 +2,7 @@
 
 @section('content')
 <h3 class="title-app">Quản lý tài khoản</h3>
-<button id="btn-addnew" onclick="location.href='{{ route ('web_accountmanager_create')}}'" class="btn-add mb-4">Add New</button>
+<div class="w-100 d-flex flex-row-reverse mb-4"><button id="btn-addnew" onclick="location.href='{{ route ('web_accountmanager_create')}}'" class="btn-add">Add New</button></div>
 
 <table id="datatable-list-all" class="table table-striped table-bordered" cellspacing="0" width="100%">
   <thead>
@@ -58,20 +58,6 @@ $(document).ready(function () {
         document.location.href = url;
     } );
 });
- 
-
-// function showUser() {
-//   var xmlhttp=new XMLHttpRequest();
-//   xmlhttp.onreadystatechange=function() {
-//     if (this.readyState==4 && this.status==200) {
-//       var a = JSON.parse(this.responseText);
-//       console.log(a);
-//       document.getElementById("txtHint").innerHTML=a['data']['0'].app_brand;
-//     }
-//   }
-//   xmlhttp.open("GET",'http://api.apiatoaccountmanager/v1/accountmanagers',true);
-//   xmlhttp.send();
-// }
 
 </script>
 
