@@ -69,11 +69,11 @@ class Controller extends WebController
      *
      * @param EditAccountManagerRequest $request
      */
-    public function edit(EditAccountManagerRequest $request)
+    public function edit(EditAccountManagerRequest $request, $id)
     {
-        $accountmanager = Apiato::call('AccountManager@GetAccountManagerByIdAction', [$request]);
+        $accountManager = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$id]);
 
-        // ..
+        return view('accountmanager::account-manager.edit-account-manager')->with('accountManager', $accountManager);
     }
 
     /**
