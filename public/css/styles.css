@@ -13,10 +13,17 @@ body{
 .btn-back{
 	background-color: #1372bf;
 	color: white;
+    height: fit-content;
 }
 .btn-save{
 	background-color: #14c7ac;
 	color: white;
+    height: fit-content;
+}
+.btn-delete{
+	background-color: red;
+	color: white;
+    height: fit-content;
 }
 .label-addnew-container{
 	max-width: 350px;
@@ -41,6 +48,8 @@ body{
 	padding: 0.3rem 0.7rem;
 }
 .input-radio-addnew-container{
+	width: 100%;
+	max-width: 700px;
 	color: red;
 	font-weight: bold;
 	font-size: 1.1rem;

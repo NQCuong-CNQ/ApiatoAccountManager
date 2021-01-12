@@ -31,6 +31,7 @@ class AccountManagerTransformer extends Transformer
         $response = [
             'object'                => 'AccountManager',
             'id'                    => $accountManager->id,
+            'app_name'              => $accountManager->app_name,
             'app_brand'             => $accountManager->app_brand,
             'app_code'              => $accountManager->app_code,
             'domain_name'           => $accountManager->domain_name,

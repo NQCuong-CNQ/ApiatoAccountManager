@@ -16,11 +16,14 @@ class ProxyCreateAccountManagerTransporter extends DataTransporter
     protected $schema = [
         'type' => 'object',
         'properties' => [
+            "company_name",
+            "app_name",
             "app_brand",
             "app_code",
             "domain_name",
             "site_name",
             "base_url",
+            "start_date",
         ],
 
         // những dữ liệu bắt buộc phải có

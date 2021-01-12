@@ -23,7 +23,4 @@
 $router->delete('accountmanagers/{id}', [
     'as' => 'api_accountmanager_delete_account_manager',
     'uses'  => 'Controller@deleteAccountManager',
-    'middleware' => [
-      'auth:api',
-    ],
 ]);

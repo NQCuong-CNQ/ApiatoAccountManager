@@ -23,8 +23,11 @@ class CreateAccountManagerTask extends Task
         try {
 
             $accountManager = $this->repository->create([
+                'company_name'      => $data->company_name,
 
-                'app_brand'         =>  $data->app_brand,
+                'app_name'          => $data->app_name,
+
+                'app_brand'         => $data->app_brand,
 
                 'app_code'          => $data->app_code,
 

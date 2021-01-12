@@ -20,10 +20,7 @@
  */
 
 /** @var Route $router */
-$router->patch('accountmanagers/{id}', [
+$router->put('accountmanagers/{id}', [
     'as' => 'api_accountmanager_update_account_manager',
     'uses'  => 'Controller@updateAccountManager',
-    'middleware' => [
-      'auth:api',
-    ],
 ]);

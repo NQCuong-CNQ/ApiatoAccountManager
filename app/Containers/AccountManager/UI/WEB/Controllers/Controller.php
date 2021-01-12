@@ -40,7 +40,7 @@ class Controller extends WebController
         // $accountmanagers = Apiato::call('AccountManager@GetAllAccountManagersAction', [$request]);
 
         // ..
-        return view('accountmanager::account-manager.detail-account-manager');
+        return view('accountmanager::account-manager.addnew-account-manager');
     }
 
     /**
@@ -52,10 +52,9 @@ class Controller extends WebController
     {
         // $accountmanager = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$id]);
 
-        $result = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$id]);
+        $accountManager = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$id]);
         
         // chi tiết cấu thành địa chỉ
-        $accountManager = $result;
         // return $content
         //     ->title(trans("address::address-component.headers.find_by_id_address_component"))
         //     ->row(function($row) use($addressComponent) {
