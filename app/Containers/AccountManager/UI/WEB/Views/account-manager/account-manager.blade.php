@@ -1,7 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
-<button id="btn-addnew" onclick="location.href='{{ route ('addNew')}}'" class="btn-add mb-4">Add New</button>
+<h3 class="title-app">Quản lý tài khoản</h3>
+<button id="btn-addnew" onclick="location.href='{{ route ('web_accountmanager_create')}}'" class="btn-add mb-4">Add New</button>
 
 <table id="datatable-list-all" class="table table-striped table-bordered" cellspacing="0" width="100%">
   <thead>

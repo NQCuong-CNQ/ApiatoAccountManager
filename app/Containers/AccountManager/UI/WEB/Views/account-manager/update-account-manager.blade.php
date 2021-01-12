@@ -13,14 +13,8 @@
     </form>
   </div>
 </div>
-
-@component('accountmanager::forms.form-account-manager',[
-    // thành viên đưa vào form
-    'accountManager'  =>  $accountManager,
-    // thuộc tính
-    'disabled'  =>  true,
-])
-@endcomponent
+@include('accountmanager::forms.form-detail-account-manager')
+@endsection
 
 <script type="text/javascript">
   function onclickUpdateBtn(argument) {

@@ -6,6 +6,9 @@ button{
 body{
 	padding: 2rem;
 }
+.title-app{
+	text-align: center;
+}
 .btn-add{
 	background-color: #14c7ac;
 	color: white;
