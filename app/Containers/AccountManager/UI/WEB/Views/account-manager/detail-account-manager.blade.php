@@ -23,3 +23,9 @@
     'disabled'  =>  true,
 ])
 @endcomponent
+
+<script type="text/javascript">
+$(document).ready(function () {
+  alert(window.origin);
+});
+</script>

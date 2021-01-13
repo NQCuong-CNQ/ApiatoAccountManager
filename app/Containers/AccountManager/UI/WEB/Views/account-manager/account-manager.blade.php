@@ -26,6 +26,7 @@
 
 <script type="text/javascript">
 $(document).ready(function () {
+  alert(window.origin);
   var table = $('#datatable-list-all').DataTable({
         "scrollX": true,
         "responsive": false,
