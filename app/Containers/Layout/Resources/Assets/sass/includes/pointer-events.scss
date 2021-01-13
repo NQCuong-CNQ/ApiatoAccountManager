@@ -1,0 +1,8 @@
+.pointer-event-none{
+    pointer-events: none !important;
+    cursor: not-allowed;
+}
+.pointer-event-all {
+    pointer-events: all !important;
+    cursor: initial;
+}

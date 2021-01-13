@@ -1,0 +1,17 @@
+{
+  "name": "apiato/layout",
+  "description": "Layout Container for apiato.",
+  "type": "apiato-container",
+  "require": {
+    "laravelcollective/html": "^6.1",
+    "mariuzzo/laravel-js-localization": "^1.6",
+    "laracasts/utilities": "^3.1",
+    "proengsoft/laravel-jsvalidation": "^4.1"
+  },
+  "extra": {
+    "laravel": {
+      "dont-discover": [
+      ]
+    }
+  }
+}

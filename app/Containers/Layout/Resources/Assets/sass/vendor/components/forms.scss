@@ -1,0 +1,40 @@
+$input-disabled-bg:         #fff !default;
+$inValid-border:            1px solid #29d925 !default;
+$notValid-border:            1px solid #d92550 !default;
+
+@import "../layout-variables";
+
+@import "../../../vendor/architectui-pro-1.3.0/src/assets/components/bootstrap4/forms";
+@import "../../../vendor/architectui-pro-1.3.0/src/assets/components/bootstrap4/custom-forms";
+@import "../../../vendor/architectui-pro-1.3.0/src/assets/components/bootstrap4/input-group";
+
+@import "../../../vendor/architectui-pro-1.3.0/src/assets/components/icons/linearicons";
+@import "../../../vendor/architectui-pro-1.3.0/src/assets/elements/forms";
+@import "../../../vendor/architectui-pro-1.3.0/src/assets/elements/forms-wizard";
+
+@import "../../../vendor/architectui-pro-1.3.0/src/assets/components/forms/dropzone/dropzone";
+
+@import "../../../vendor/architectui-pro-1.3.0/src/assets/components/forms/typeahead/typeahead";
+@import "../../../vendor/architectui-pro-1.3.0/src/assets/components/forms/toggle-switch/switch";
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: $input-disabled-bg;
+    cursor: $input-cursor;
+    opacity: 1;
+}
+
+input.isValid,
+textarea.isValid,
+textarea.isValid + div{
+    border : $inValid-border;
+}
+
+input.notValid,
+textarea.notValid,
+textarea.notValid + div{
+    border : $notValid-border;
+}
+
+button:disabled {
+    cursor: $input-cursor;
+}

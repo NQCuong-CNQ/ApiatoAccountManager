@@ -1,0 +1,32 @@
+
+// fix body font
+body{
+    color: #000000;
+}
+
+// font size
+.fz-12 {
+    font-size: $font-size-12;
+}
+
+// set fonsize 12 cho toàn bộ table khi có class fz-12
+table {
+    .fz-12 * {
+        font-size: $font-size-12;
+    }
+}
+
+// set fonsize 12 cho toàn bộ con trong class
+.fz-12-all {
+
+    font-size: $font-size-12;
+    * {
+        font-size: $font-size-12;
+    }
+}
+
+// font weight
+.font-weight-500 {
+    font-weight: 500 !important;
+}
+// end

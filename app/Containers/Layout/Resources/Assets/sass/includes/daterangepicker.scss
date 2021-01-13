@@ -1,0 +1,23 @@
+.daterangepicker .calendar-table th, .daterangepicker .calendar-table td{
+    min-width: 25px;
+    width: 27px;
+    height: 25px;
+    line-height: unset;
+    border-radius: 0rem !important;
+    border: 1px solid #d2b5b561;
+}
+
+.daterangepicker td.active, .daterangepicker td.active:hover{
+    border-radius: 0;
+}
+
+.daterangepicker td.off, .daterangepicker td.off.in-range, .daterangepicker td.off.start-date, .daterangepicker td.off.end-date{
+    border-color: #d2b5b561;
+}
+.daterangepicker .drp-calendar.left{
+    padding: 8px 0 0px 0;
+}
+
+.daterangepicker .drp-buttons{
+    padding: 2px;
+}

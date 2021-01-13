@@ -1,0 +1,33 @@
+// select2 cho valid date
+select.is-invalid + span.select2.select2-container{
+
+    .select2-selection.select2-selection--single{
+        border: 1px solid #d92550;
+    }
+} 
+
+// fix nút clear select
+.select2-container--bootstrap4 .select2-selection--multiple.input-sm .select2-selection__clear, 
+.input-group-sm .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__clear, 
+.form-group-sm .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__clear {
+    margin-top: 0;
+}
+
+// fix background disable
+select[disabled]+.select2-container--bootstrap4 .select2-selection, 
+select[disabled]+.select2-container--bootstrap4 .select2-selection--multiple .select2-selection__choice
+{
+    background-color: #fdfdfd !important;
+    opacity         : 1 !important;
+    cursor          : not-allowed !important;
+}
+
+
+.input-group > .select2-container--bootstrap4 {
+    display: block;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    margin-bottom: 0;
+}
+  

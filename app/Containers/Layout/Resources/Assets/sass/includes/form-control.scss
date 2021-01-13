@@ -1,0 +1,9 @@
+
+// fix form disable background thành màu trắng
+.form-control:disabled,
+.form-control[readonly]
+{
+    background-color: #fdfdfd !important;
+    opacity         : 1 !important;
+    cursor          : not-allowed !important;
+}

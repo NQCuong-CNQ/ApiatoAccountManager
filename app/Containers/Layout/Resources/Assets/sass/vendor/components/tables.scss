@@ -1,0 +1,16 @@
+$border-right-width-default:  2px !default;
+
+@import "../layout-variables";
+
+@import "../../../vendor/architectui-pro-1.3.0/src/assets/components/bootstrap4/tables";
+@import '~bootstrap-table/src/bootstrap-table';
+@import '~datatables.net-bs4/css/dataTables.bootstrap4.css';
+@import '~datatables.net-responsive-bs4/css/responsive.bootstrap4.css';
+@import '~datatables.net-fixedcolumns-bs4/css/fixedColumns.bootstrap4.css';
+@import '~datatables.net-fixedheader-bs4/css/fixedHeader.bootstrap4.css';
+@import "../../../vendor/architectui-pro-1.3.0/src/assets/components/tables/tables";
+@import "../../../vendor/architectui-pro-1.3.0/src/assets/components/tables/datatables";
+
+table.table-bordered.dataTable {
+    border-right-width: $border-right-width-default;
+}

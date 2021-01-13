@@ -14,6 +14,7 @@
     'accountManager'  =>  ['id'=>'', 'company_name'=>'', 'domain_name'=>'', 'base_url'=>'', 'app_code'=>'', 'app_name'=>'', 'app_brand'=>'', 'site_name'=>''],
     // thuộc tính
     'disabled'  =>  false,
+    'isNew' => true,
 ])
 @endcomponent
 

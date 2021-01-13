@@ -21,11 +21,6 @@
     'accountManager'  =>  $accountManager,
     // thuộc tính
     'disabled'  =>  true,
+    'isNew' => false,
 ])
 @endcomponent
-
-<script type="text/javascript">
-$(document).ready(function () {
-  alert(window.origin);
-});
-</script>

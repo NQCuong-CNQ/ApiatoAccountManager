@@ -1,0 +1,7 @@
+
+// fix table khi sự dụng dataTable mất border
+table.dataTable{
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    border-collapse: collapse !important;
+}

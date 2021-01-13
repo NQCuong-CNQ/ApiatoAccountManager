@@ -53,6 +53,7 @@ class ComposerStaticInit07e9a78a7e20b892ddfa9f28ef39b743
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
+        '6292c1671f9440c89e0af20a0f78754a' => __DIR__ . '/..' . '/laracasts/utilities/src/helpers.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         'ab9b68c5b1def6f80e89be13eb0a4be3' => __DIR__ . '/..' . '/spatie/laravel-fractal/src/helpers.php',
         '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
@@ -142,6 +143,7 @@ class ComposerStaticInit07e9a78a7e20b892ddfa9f28ef39b743
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
             'Prophecy\\' => 9,
+            'Proengsoft\\JsValidation\\' => 24,
             'Prettus\\Validator\\' => 18,
             'Prettus\\Repository\\' => 19,
             'PhpParser\\' => 10,
@@ -159,6 +161,7 @@ class ComposerStaticInit07e9a78a7e20b892ddfa9f28ef39b743
         'M' => 
         array (
             'Monolog\\' => 8,
+            'Mariuzzo\\LaravelJsLocalization\\' => 31,
         ),
         'L' => 
         array (
@@ -173,6 +176,7 @@ class ComposerStaticInit07e9a78a7e20b892ddfa9f28ef39b743
             'Laravel\\Tinker\\' => 15,
             'Laravel\\Socialite\\' => 18,
             'Laravel\\Passport\\' => 17,
+            'Laracasts\\Utilities\\JavaScript\\' => 31,
             'Laminas\\ZendFrameworkBridge\\' => 28,
             'Laminas\\Diactoros\\' => 18,
         ),
@@ -476,6 +480,10 @@ class ComposerStaticInit07e9a78a7e20b892ddfa9f28ef39b743
         array (
             0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
         ),
+        'Proengsoft\\JsValidation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src',
+        ),
         'Prettus\\Validator\\' => 
         array (
             0 => __DIR__ . '/..' . '/prettus/laravel-validation/src/Prettus/Validator',
@@ -507,6 +515,10 @@ class ComposerStaticInit07e9a78a7e20b892ddfa9f28ef39b743
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Mariuzzo\\LaravelJsLocalization\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mariuzzo/laravel-js-localization/src/Mariuzzo/LaravelJsLocalization',
         ),
         'League\\OAuth2\\Server\\' => 
         array (
@@ -551,6 +563,10 @@ class ComposerStaticInit07e9a78a7e20b892ddfa9f28ef39b743
         'Laravel\\Passport\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/passport/src',
+        ),
+        'Laracasts\\Utilities\\JavaScript\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laracasts/utilities/src',
         ),
         'Laminas\\ZendFrameworkBridge\\' => 
         array (
@@ -769,6 +785,13 @@ class ComposerStaticInit07e9a78a7e20b892ddfa9f28ef39b743
                 0 => __DIR__ . '/..' . '/mockery/mockery/library',
             ),
         ),
+        'J' => 
+        array (
+            'JShrink' => 
+            array (
+                0 => __DIR__ . '/..' . '/tedivm/jshrink/src',
+            ),
+        ),
         'H' => 
         array (
             'Highlight\\' => 
@@ -925,11 +948,10 @@ class ComposerStaticInit07e9a78a7e20b892ddfa9f28ef39b743
         'App\\Containers\\AccountManager\\Actions\\GetAllAccountManagersAction' => __DIR__ . '/../..' . '/app/Containers/AccountManager/Actions/GetAllAccountManagersAction.php',
         'App\\Containers\\AccountManager\\Actions\\UpdateAccountManagerAction' => __DIR__ . '/../..' . '/app/Containers/AccountManager/Actions/UpdateAccountManagerAction.php',
         'App\\Containers\\AccountManager\\Data\\Repositories\\AccountManagerRepository' => __DIR__ . '/../..' . '/app/Containers/AccountManager/Data/Repositories/AccountManagerRepository.php',
-        'App\\Containers\\AccountManager\\Data\\Transporters\\CreateAccountManagerTransporter' => __DIR__ . '/../..' . '/app/Containers/AccountManager/Data/Transporters/CreateAccountManagerTransporter.php',
         'App\\Containers\\AccountManager\\Data\\Transporters\\DeleteAccountManagerTransporter' => __DIR__ . '/../..' . '/app/Containers/AccountManager/Data/Transporters/DeleteAccountManagerTransporter.php',
-        'App\\Containers\\AccountManager\\Data\\Transporters\\FindAccountManagerByIdTransporter' => __DIR__ . '/../..' . '/app/Containers/AccountManager/Data/Transporters/FindAccountManagerByIdTransporter.php',
         'App\\Containers\\AccountManager\\Data\\Transporters\\GetAllAccountManagersTransporter' => __DIR__ . '/../..' . '/app/Containers/AccountManager/Data/Transporters/GetAllAccountManagersTransporter.php',
         'App\\Containers\\AccountManager\\Data\\Transporters\\ProxyCreateAccountManagerTransporter' => __DIR__ . '/../..' . '/app/Containers/AccountManager/Data/Transporters/ProxyCreateAccountManagerTransporter.php',
+        'App\\Containers\\AccountManager\\Data\\Transporters\\ProxyFindAccountManagerByIdTransporter' => __DIR__ . '/../..' . '/app/Containers/AccountManager/Data/Transporters/ProxyFindAccountManagerByIdTransporter.php',
         'App\\Containers\\AccountManager\\Data\\Transporters\\ProxyGetAllAccountManagerTransporter' => __DIR__ . '/../..' . '/app/Containers/AccountManager/Data/Transporters/ProxyGetAllAccountManagerTransporter.php',
         'App\\Containers\\AccountManager\\Data\\Transporters\\UpdateAccountManagerTransporter' => __DIR__ . '/../..' . '/app/Containers/AccountManager/Data/Transporters/UpdateAccountManagerTransporter.php',
         'App\\Containers\\AccountManager\\Models\\AccountManager' => __DIR__ . '/../..' . '/app/Containers/AccountManager/Models/AccountManager.php',
@@ -954,6 +976,51 @@ class ComposerStaticInit07e9a78a7e20b892ddfa9f28ef39b743
         'App\\Containers\\AccountManager\\UI\\WEB\\Requests\\GetAllAccountManagersRequest' => __DIR__ . '/../..' . '/app/Containers/AccountManager/UI/WEB/Requests/GetAllAccountManagersRequest.php',
         'App\\Containers\\AccountManager\\UI\\WEB\\Requests\\StoreAccountManagerRequest' => __DIR__ . '/../..' . '/app/Containers/AccountManager/UI/WEB/Requests/StoreAccountManagerRequest.php',
         'App\\Containers\\AccountManager\\UI\\WEB\\Requests\\UpdateAccountManagerRequest' => __DIR__ . '/../..' . '/app/Containers/AccountManager/UI/WEB/Requests/UpdateAccountManagerRequest.php',
+        'App\\Containers\\Layout\\Contracts\\Buildable' => __DIR__ . '/../..' . '/app/Containers/Layout/Contracts/Buildable.php',
+        'App\\Containers\\Layout\\Facades\\Layout' => __DIR__ . '/../..' . '/app/Containers/Layout/Facades/Layout.php',
+        'App\\Containers\\Layout\\Layout' => __DIR__ . '/../..' . '/app/Containers/Layout/Layout.php',
+        'App\\Containers\\Layout\\Layout\\Column' => __DIR__ . '/../..' . '/app/Containers/Layout/Layout/Column.php',
+        'App\\Containers\\Layout\\Layout\\Content' => __DIR__ . '/../..' . '/app/Containers/Layout/Layout/Content.php',
+        'App\\Containers\\Layout\\Layout\\Row' => __DIR__ . '/../..' . '/app/Containers/Layout/Layout/Row.php',
+        'App\\Containers\\Layout\\Providers\\HeaderServiceProvider' => __DIR__ . '/../..' . '/app/Containers/Layout/Providers/HeaderServiceProvider.php',
+        'App\\Containers\\Layout\\Providers\\MainServiceProvider' => __DIR__ . '/../..' . '/app/Containers/Layout/Providers/MainServiceProvider.php',
+        'App\\Containers\\Layout\\Providers\\PublishAssetsServiceProvider' => __DIR__ . '/../..' . '/app/Containers/Layout/Providers/PublishAssetsServiceProvider.php',
+        'App\\Containers\\Layout\\Providers\\SidebarServiceProvider' => __DIR__ . '/../..' . '/app/Containers/Layout/Providers/SidebarServiceProvider.php',
+        'App\\Containers\\Layout\\Providers\\TokenServiceProvider' => __DIR__ . '/../..' . '/app/Containers/Layout/Providers/TokenServiceProvider.php',
+        'App\\Containers\\Layout\\Support\\JavascriptTransformer' => __DIR__ . '/../..' . '/app/Containers/Layout/Support/JavascriptTransformer.php',
+        'App\\Containers\\Layout\\Traits\\AttributesToHtml' => __DIR__ . '/../..' . '/app/Containers/Layout/Traits/AttributesToHtml.php',
+        'App\\Containers\\Layout\\Traits\\Buildable' => __DIR__ . '/../..' . '/app/Containers/Layout/Traits/Buildable.php',
+        'App\\Containers\\Layout\\Traits\\HasAssets' => __DIR__ . '/../..' . '/app/Containers/Layout/Traits/HasAssets.php',
+        'App\\Containers\\Layout\\Traits\\HasAttributes' => __DIR__ . '/../..' . '/app/Containers/Layout/Traits/HasAttributes.php',
+        'App\\Containers\\Layout\\Traits\\HasClasses' => __DIR__ . '/../..' . '/app/Containers/Layout/Traits/HasClasses.php',
+        'App\\Containers\\Layout\\Traits\\HasElements' => __DIR__ . '/../..' . '/app/Containers/Layout/Traits/HasElements.php',
+        'App\\Containers\\Layout\\Traits\\HasFlashMessages' => __DIR__ . '/../..' . '/app/Containers/Layout/Traits/HasFlashMessages.php',
+        'App\\Containers\\Layout\\Traits\\HasHeader' => __DIR__ . '/../..' . '/app/Containers/Layout/Traits/HasHeader.php',
+        'App\\Containers\\Layout\\Traits\\HasLogo' => __DIR__ . '/../..' . '/app/Containers/Layout/Traits/HasLogo.php',
+        'App\\Containers\\Layout\\Traits\\HasSidebar' => __DIR__ . '/../..' . '/app/Containers/Layout/Traits/HasSidebar.php',
+        'App\\Containers\\Layout\\Traits\\HasStyles' => __DIR__ . '/../..' . '/app/Containers/Layout/Traits/HasStyles.php',
+        'App\\Containers\\Layout\\Traits\\Renderable' => __DIR__ . '/../..' . '/app/Containers/Layout/Traits/Renderable.php',
+        'App\\Containers\\Layout\\Traits\\UseComponent' => __DIR__ . '/../..' . '/app/Containers/Layout/Traits/UseComponent.php',
+        'App\\Containers\\Layout\\Traits\\Viewable' => __DIR__ . '/../..' . '/app/Containers/Layout/Traits/Viewable.php',
+        'App\\Containers\\Layout\\Widgets\\Header' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Header.php',
+        'App\\Containers\\Layout\\Widgets\\Header\\HeaderLeft' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Header/HeaderLeft.php',
+        'App\\Containers\\Layout\\Widgets\\Header\\HeaderRight' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Header/HeaderRight.php',
+        'App\\Containers\\Layout\\Widgets\\Header\\SearchInput' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Header/SearchInput.php',
+        'App\\Containers\\Layout\\Widgets\\Logo' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Logo.php',
+        'App\\Containers\\Layout\\Widgets\\Menu\\Menu' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Menu/Menu.php',
+        'App\\Containers\\Layout\\Widgets\\Menu\\MenuIcon' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Menu/MenuIcon.php',
+        'App\\Containers\\Layout\\Widgets\\Menu\\MenuItem' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Menu/MenuItem.php',
+        'App\\Containers\\Layout\\Widgets\\Menu\\MenuLink' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Menu/MenuLink.php',
+        'App\\Containers\\Layout\\Widgets\\Navbar' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Navbar.php',
+        'App\\Containers\\Layout\\Widgets\\Navbar\\NavbarIcon' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Navbar/NavbarIcon.php',
+        'App\\Containers\\Layout\\Widgets\\Navbar\\NavbarItem' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Navbar/NavbarItem.php',
+        'App\\Containers\\Layout\\Widgets\\Navbar\\NavbarLink' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Navbar/NavbarLink.php',
+        'App\\Containers\\Layout\\Widgets\\Sidebar' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Sidebar.php',
+        'App\\Containers\\Layout\\Widgets\\Sidebar\\Link' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Sidebar/Link.php',
+        'App\\Containers\\Layout\\Widgets\\Sidebar\\Menu' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Sidebar/Menu.php',
+        'App\\Containers\\Layout\\Widgets\\Sidebar\\MenuIcon' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Sidebar/MenuIcon.php',
+        'App\\Containers\\Layout\\Widgets\\Sidebar\\MenuItem' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Sidebar/MenuItem.php',
+        'App\\Containers\\Layout\\Widgets\\Widget' => __DIR__ . '/../..' . '/app/Containers/Layout/Widgets/Widget.php',
         'App\\Ship\\Commands\\HelloWorldCommand' => __DIR__ . '/../..' . '/app/Ship/Commands/HelloWorldCommand.php',
         'App\\Ship\\Criterias\\Eloquent\\CountCriteria' => __DIR__ . '/../..' . '/app/Ship/Criterias/Eloquent/CountCriteria.php',
         'App\\Ship\\Criterias\\Eloquent\\CreatedTodayCriteria' => __DIR__ . '/../..' . '/app/Ship/Criterias/Eloquent/CreatedTodayCriteria.php',
@@ -3830,6 +3897,7 @@ class ComposerStaticInit07e9a78a7e20b892ddfa9f28ef39b743
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
+        'JShrink\\Minifier' => __DIR__ . '/..' . '/tedivm/jshrink/src/JShrink/Minifier.php',
         'Jaybizzle\\CrawlerDetect\\CrawlerDetect' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/CrawlerDetect.php',
         'Jaybizzle\\CrawlerDetect\\Fixtures\\AbstractProvider' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/AbstractProvider.php',
         'Jaybizzle\\CrawlerDetect\\Fixtures\\Crawlers' => __DIR__ . '/..' . '/jaybizzle/crawler-detect/src/Fixtures/Crawlers.php',
@@ -3932,6 +4000,13 @@ class ComposerStaticInit07e9a78a7e20b892ddfa9f28ef39b743
         'Laminas\\ZendFrameworkBridge\\Module' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/Module.php',
         'Laminas\\ZendFrameworkBridge\\Replacements' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/Replacements.php',
         'Laminas\\ZendFrameworkBridge\\RewriteRules' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/RewriteRules.php',
+        'Laracasts\\Utilities\\JavaScript\\JavaScriptFacade' => __DIR__ . '/..' . '/laracasts/utilities/src/JavaScriptFacade.php',
+        'Laracasts\\Utilities\\JavaScript\\JavaScriptServiceProvider' => __DIR__ . '/..' . '/laracasts/utilities/src/JavaScriptServiceProvider.php',
+        'Laracasts\\Utilities\\JavaScript\\LaravelViewBinder' => __DIR__ . '/..' . '/laracasts/utilities/src/LaravelViewBinder.php',
+        'Laracasts\\Utilities\\JavaScript\\Transformers\\DefaultTransformer' => __DIR__ . '/..' . '/laracasts/utilities/src/Transformers/DefaultTransformer.php',
+        'Laracasts\\Utilities\\JavaScript\\Transformers\\ObjectTransformer' => __DIR__ . '/..' . '/laracasts/utilities/src/Transformers/ObjectTransformer.php',
+        'Laracasts\\Utilities\\JavaScript\\Transformers\\Transformer' => __DIR__ . '/..' . '/laracasts/utilities/src/Transformers/Transformer.php',
+        'Laracasts\\Utilities\\JavaScript\\ViewBinder' => __DIR__ . '/..' . '/laracasts/utilities/src/ViewBinder.php',
         'Laravel\\Passport\\ApiTokenCookieFactory' => __DIR__ . '/..' . '/laravel/passport/src/ApiTokenCookieFactory.php',
         'Laravel\\Passport\\AuthCode' => __DIR__ . '/..' . '/laravel/passport/src/AuthCode.php',
         'Laravel\\Passport\\Bridge\\AccessToken' => __DIR__ . '/..' . '/laravel/passport/src/Bridge/AccessToken.php',
@@ -4429,6 +4504,9 @@ class ComposerStaticInit07e9a78a7e20b892ddfa9f28ef39b743
         'League\\OAuth2\\Server\\ResponseTypes\\BearerTokenResponse' => __DIR__ . '/..' . '/league/oauth2-server/src/ResponseTypes/BearerTokenResponse.php',
         'League\\OAuth2\\Server\\ResponseTypes\\RedirectResponse' => __DIR__ . '/..' . '/league/oauth2-server/src/ResponseTypes/RedirectResponse.php',
         'League\\OAuth2\\Server\\ResponseTypes\\ResponseTypeInterface' => __DIR__ . '/..' . '/league/oauth2-server/src/ResponseTypes/ResponseTypeInterface.php',
+        'Mariuzzo\\LaravelJsLocalization\\Commands\\LangJsCommand' => __DIR__ . '/..' . '/mariuzzo/laravel-js-localization/src/Mariuzzo/LaravelJsLocalization/Commands/LangJsCommand.php',
+        'Mariuzzo\\LaravelJsLocalization\\Generators\\LangJsGenerator' => __DIR__ . '/..' . '/mariuzzo/laravel-js-localization/src/Mariuzzo/LaravelJsLocalization/Generators/LangJsGenerator.php',
+        'Mariuzzo\\LaravelJsLocalization\\LaravelJsLocalizationServiceProvider' => __DIR__ . '/..' . '/mariuzzo/laravel-js-localization/src/Mariuzzo/LaravelJsLocalization/LaravelJsLocalizationServiceProvider.php',
         'Mobile_Detect' => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/Mobile_Detect.php',
         'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
@@ -5453,6 +5531,24 @@ class ComposerStaticInit07e9a78a7e20b892ddfa9f28ef39b743
         'Prettus\\Validator\\Contracts\\ValidatorInterface' => __DIR__ . '/..' . '/prettus/laravel-validation/src/Prettus/Validator/Contracts/ValidatorInterface.php',
         'Prettus\\Validator\\Exceptions\\ValidatorException' => __DIR__ . '/..' . '/prettus/laravel-validation/src/Prettus/Validator/Exceptions/ValidatorException.php',
         'Prettus\\Validator\\LaravelValidator' => __DIR__ . '/..' . '/prettus/laravel-validation/src/Prettus/Validator/LaravelValidator.php',
+        'Proengsoft\\JsValidation\\Exceptions\\PropertyNotFoundException' => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src/Exceptions/PropertyNotFoundException.php',
+        'Proengsoft\\JsValidation\\Facades\\JsValidatorFacade' => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src/Facades/JsValidatorFacade.php',
+        'Proengsoft\\JsValidation\\Javascript\\JavascriptRulesTrait' => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src/Javascript/JavascriptRulesTrait.php',
+        'Proengsoft\\JsValidation\\Javascript\\JavascriptValidator' => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src/Javascript/JavascriptValidator.php',
+        'Proengsoft\\JsValidation\\Javascript\\MessageParser' => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src/Javascript/MessageParser.php',
+        'Proengsoft\\JsValidation\\Javascript\\RuleParser' => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src/Javascript/RuleParser.php',
+        'Proengsoft\\JsValidation\\Javascript\\ValidatorHandler' => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src/Javascript/ValidatorHandler.php',
+        'Proengsoft\\JsValidation\\JsValidationServiceProvider' => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src/JsValidationServiceProvider.php',
+        'Proengsoft\\JsValidation\\JsValidatorFactory' => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src/JsValidatorFactory.php',
+        'Proengsoft\\JsValidation\\RemoteValidationMiddleware' => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src/RemoteValidationMiddleware.php',
+        'Proengsoft\\JsValidation\\Remote\\FormRequest' => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src/Remote/FormRequest.php',
+        'Proengsoft\\JsValidation\\Remote\\Resolver' => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src/Remote/Resolver.php',
+        'Proengsoft\\JsValidation\\Remote\\Validator' => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src/Remote/Validator.php',
+        'Proengsoft\\JsValidation\\Support\\AccessProtectedTrait' => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src/Support/AccessProtectedTrait.php',
+        'Proengsoft\\JsValidation\\Support\\DelegatedValidator' => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src/Support/DelegatedValidator.php',
+        'Proengsoft\\JsValidation\\Support\\RuleListTrait' => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src/Support/RuleListTrait.php',
+        'Proengsoft\\JsValidation\\Support\\UseDelegatedValidatorTrait' => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src/Support/UseDelegatedValidatorTrait.php',
+        'Proengsoft\\JsValidation\\Support\\ValidationRuleParserProxy' => __DIR__ . '/..' . '/proengsoft/laravel-jsvalidation/src/Support/ValidationRuleParserProxy.php',
         'Prophecy\\Argument' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument.php',
         'Prophecy\\Argument\\ArgumentsWildcard' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument/ArgumentsWildcard.php',
         'Prophecy\\Argument\\Token\\AnyValueToken' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument/Token/AnyValueToken.php',

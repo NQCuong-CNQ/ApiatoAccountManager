@@ -1,0 +1,31 @@
+
+// animation
+@import "./layout-variables";
+// animation
+// @import "~animate-sass/animate";
+@import "~animate.css/animate";
+
+// UTILS
+@import "../../vendor/architectui-pro-1.3.0/src/assets/utils/helpers";
+@import "../../vendor/architectui-pro-1.3.0/src/assets/utils/backgrounds";
+@import "../../vendor/architectui-pro-1.3.0/src/assets/utils/animate";
+@import "../../vendor/architectui-pro-1.3.0/src/assets/utils/comps-animations";
+
+// Layout
+@import "../../vendor/architectui-pro-1.3.0/src/assets/layout/responsive/responsive-base";
+@import "../../vendor/architectui-pro-1.3.0/src/assets/layout/main/main-base";
+@import "../../vendor/architectui-pro-1.3.0/src/assets/layout/generic/generic-base";
+@import "../../vendor/architectui-pro-1.3.0/src/assets/layout/generic/animations";
+
+@import "../../vendor/architectui-pro-1.3.0/src/assets/layout/footer/footer-base";
+
+@import "../../vendor/architectui-pro-1.3.0/src/assets/layout/elements/search-box/search-box";
+@import "../../vendor/architectui-pro-1.3.0/src/assets/layout/elements/page-title/page-title-base";
+
+@import "../../vendor/architectui-pro-1.3.0/src/assets/elements/accordions";
+@import "../../vendor/architectui-pro-1.3.0/src/assets/elements/badges";
+@import "../../vendor/architectui-pro-1.3.0/src/assets/elements/cards";
+@import "../../vendor/architectui-pro-1.3.0/src/assets/elements/tabs";
+@import "../../vendor/architectui-pro-1.3.0/src/assets/elements/listgroup";
+
+@import "../../vendor/architectui-pro-1.3.0/src/assets/elements/listgroup";

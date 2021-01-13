@@ -1,5 +1,6 @@
 <fieldset @if($disabled) disabled="disabled" @endif>
 <form id="form_edit">
+	@if(!$isNew)
 	<div class="d-flex mt-3">
 		<div class="label-addnew-container">
 			<p>ID</p>
@@ -14,6 +15,7 @@
 		!!}
 		</div>
 	</div>
+	@endif
 	<div class="d-flex mt-3">
 		<div class="label-addnew-container">
 			<p>Tên công ty</p>

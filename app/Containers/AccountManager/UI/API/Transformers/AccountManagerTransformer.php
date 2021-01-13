@@ -38,7 +38,7 @@ class AccountManagerTransformer extends Transformer
             'site_name'             => $accountManager->site_name,
             'base_url'              => $accountManager->base_url,
             'company_name'          => $accountManager->company_name,
-
+            'start_date'            => $accountManager->start_date,
             // // các link quản lý
             // 'links'     =>  [
             //     // create

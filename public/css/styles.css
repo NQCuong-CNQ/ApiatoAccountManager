@@ -6,6 +6,9 @@ button{
 body{
 	padding: 2rem;
 }
+.selected{
+	background-color: rgba(0, 255, 0, 0.2) !important;
+}
 .title-app{
 	text-align: center;
 }

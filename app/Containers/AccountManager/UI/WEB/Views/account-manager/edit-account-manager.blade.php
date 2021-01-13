@@ -15,5 +15,6 @@
     'accountManager'  =>  $accountManager,
     // thuộc tính
     'disabled'  =>  false,
+    'isNew' => false,
 ])
 @endcomponent

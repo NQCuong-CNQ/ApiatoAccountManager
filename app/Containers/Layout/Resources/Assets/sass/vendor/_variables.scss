@@ -1,0 +1,15 @@
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:            $font-family-sans-serif !default;
+// stylelint-enable value-keyword-case
+
+$font-size-base:              0.88rem !default; // Assumes the browser default, typically `16px`
+$body-color:                #495057 !default;
+
+$input-disabled-bg:         #fff !default;
+$input-cursor:              no-drop !default; 
+
+$font-size-12: 0.9rem;
+
+// 
+$dropdown-link-hover-bg: red !default;

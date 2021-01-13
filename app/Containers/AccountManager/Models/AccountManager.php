@@ -14,10 +14,12 @@ class AccountManager extends Model
         'id',
         'app_brand',
         'app_code',
+        'app_name',
         'domain_name',
         'site_name',
         'base_url',
         'company_name',
+        'start_date',
     ];
 
     protected $attributes = [

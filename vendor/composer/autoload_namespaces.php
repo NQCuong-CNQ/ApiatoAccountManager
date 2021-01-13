@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Pimple' => array($vendorDir . '/pimple/pimple/src'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
+    'JShrink' => array($vendorDir . '/tedivm/jshrink/src'),
     'Highlight\\' => array($vendorDir . '/scrivo/highlight.php'),
     'HighlightUtilities\\' => array($vendorDir . '/scrivo/highlight.php'),
     'Doctrine\\DBAL\\' => array($vendorDir . '/doctrine/dbal/lib'),

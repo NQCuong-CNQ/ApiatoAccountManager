@@ -1,0 +1,12 @@
+.ui-selecting { background: #e7f0fd; }
+.ui-selected { 
+    background: #e7f0fd; 
+    color: white; 
+    // border: 0.17rem solid #1a73e8 !important;
+}
+
+.ui-selectable-helper {
+    position: absolute;
+    z-index: 100;
+    border: 1px solid #1a73e8;
+}
