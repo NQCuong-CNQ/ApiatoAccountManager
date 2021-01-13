@@ -5,9 +5,9 @@ namespace App\Containers\AccountManager\Data\Transporters;
 use App\Ship\Transporters\DataTransporter;
 
 /** 
- * @todo Transporter định nghĩa dữ liệu để có thể thêm mới 1 Account Manager
+ * @todo Transporter định nghĩa dữ liệu để có thể cập nhật 1 Account Manager
  * @Usage(use case): 
- *  - tất cả thông tin field AccountManager mà action, task thêm mới AccountManager cần
+ *  - tất cả thông tin field AccountManager mà action, task cập nhật AccountManager cần
  * @Input:
  * @Output:
  * @Flow: (luồng xử lý,thuật toán)
@@ -15,7 +15,7 @@ use App\Ship\Transporters\DataTransporter;
  * @since 13-01-2021
 */
 
-class ProxyCreateAccountManagerTransporter extends DataTransporter
+class ProxyUpdateAccountManagerTransporter extends DataTransporter
 {
 
     /**
@@ -59,3 +59,4 @@ class ProxyCreateAccountManagerTransporter extends DataTransporter
         ]
     ];
 }
+ 
