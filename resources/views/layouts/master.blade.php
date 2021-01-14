@@ -14,6 +14,7 @@
 <body>
 
   @yield('content')
+  @include('layout::includes.phpData')
   {!!Layout::js()!!}
   <script src="{{asset('js/bootstrap/addons/datatables.min.js')}}"></script>
 </body>

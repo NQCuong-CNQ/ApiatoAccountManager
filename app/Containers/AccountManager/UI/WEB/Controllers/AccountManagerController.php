@@ -13,11 +13,11 @@ use App\Ship\Parents\Controllers\WebController;
 use Apiato\Core\Foundation\Facades\Apiato;
 
 /**
- * Class Controller
+ * Class AccountManagerController
  *
  * @package App\Containers\AccountManager\UI\WEB\Controllers
  */
-class Controller extends WebController
+class AccountManagerController extends WebController
 {
     /**
      * Show all entities

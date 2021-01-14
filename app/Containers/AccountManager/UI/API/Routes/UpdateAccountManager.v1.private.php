@@ -22,5 +22,5 @@
 /** @var Route $router */
 $router->put('accountmanagers/{id}', [
     'as' => 'api_accountmanager_update_account_manager',
-    'uses'  => 'Controller@updateAccountManager',
+    'uses'  => 'AccountManagerController@updateAccountManager',
 ]);

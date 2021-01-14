@@ -1,7 +1,6 @@
 $(document).ready(function () {
-
-  $('#btn-addnew').on('click', function () {
-    document.location.href = "http://apiatoaccountmanager/accountmanagers/create";
+  $('#btn-submit').on('click', function () {
+    $('#form-submit').submit();
   });
 
 });

@@ -1,11 +1,15 @@
+{!! Form::open([
+    'method'    => $method, 
+    'url'       => $url, 
+    'id'		=> $id,
+]) !!}
 <fieldset @if($disabled) disabled="disabled" @endif>
-<form id="form_edit">
 	@if(!$isNew)
 	<div class="d-flex mt-3">
-		<div class="label-addnew-container">
+		<div class="label-form-container">
 			<p>ID</p>
 		</div>
-		<div class="input-addnew-container">
+		<div class="input-form-container">
 			{!!  Form::text(
 			'id',  
 			$accountManager['id'], 
@@ -17,25 +21,26 @@
 	</div>
 	@endif
 	<div class="d-flex mt-3">
-		<div class="label-addnew-container">
+		<div class="label-form-container">
 			<p>Tên công ty</p>
 		</div>
-		<div class="input-addnew-container">
+		<div class="input-form-container">
 		{!!  Form::text(
 			'company_name',  
 			$accountManager['company_name'], 
 			[
-			'id'    => 'company_name',
-			'placeholder' => 'Tên công ty',
+				'id'    => 'company_name',
+				'placeholder' => 'Tên công ty',
+				'required',
 			]) 
 		!!}
 		</div>
 	</div>
 	<div class="d-flex mt-3">
-	<div class="label-addnew-container">
-		<p>Tên domain</p>
-	</div>
-	<div class="input-addnew-container">
+		<div class="label-form-container">
+			<p>Tên domain</p>
+		</div>
+		<div class="input-form-container">
 		{!!  Form::text(
 			'domain_name',  
 			$accountManager['domain_name'], 
@@ -50,10 +55,10 @@
 		</div>
 	</div>
 	<div class="d-flex mt-3">
-	<div class="label-addnew-container">
-		<p>Base URL (Đường dẫn module sử dụng vd: /admin , /fronend...)</p>
-	</div>
-	<div class="input-addnew-container">
+		<div class="label-form-container">
+			<p>Base URL (Đường dẫn module sử dụng vd: /admin , /fronend...)</p>
+		</div>
+		<div class="input-form-container">
 		{!!  Form::text(
 			'base_url',  
 			$accountManager['base_url'], 
@@ -68,10 +73,10 @@
 		</div>
 	</div>
 	<div class="d-flex mt-3">
-	<div class="label-addnew-container">
-		<p>Mã ứng dụng</p>
-	</div>
-	<div class="input-addnew-container">
+		<div class="label-form-container">
+			<p>Mã ứng dụng</p>
+		</div>
+		<div class="input-form-container">
 		{!!  Form::text(
 			'app_code',  
 			$accountManager['app_code'], 
@@ -86,10 +91,10 @@
 		</div>
 	</div>
 	<div class="d-flex mt-3">
-	<div class="label-addnew-container">
-		<p>Tên ứng dụng</p>
-	</div>
-	<div class="input-addnew-container">
+		<div class="label-form-container">
+			<p>Tên ứng dụng</p>
+		</div>
+		<div class="input-form-container">
 		{!!  Form::text(
 			'app_name',  
 			$accountManager['app_name'], 
@@ -104,10 +109,10 @@
 		</div>
 	</div>
 	<div class="d-flex mt-3">
-		<div class="label-addnew-container">
+		<div class="label-form-container">
 			<p>Chọn loại ứng dụng</p>
 		</div>
-		<div class="input-radio-addnew-container">
+		<div class="input-radio-form-container">
 			<div>
 				{{ Form::radio('app_brand', '1', false, array('id'=>'app_brand_pmv')) }}
 				{{ Form::label('app_brand_pmv', 'Phần mềm vé') }}
@@ -136,10 +141,10 @@
 		</div>
 	</div>
 	<div class="d-flex mt-3">
-		<div class="label-addnew-container">
+		<div class="label-form-container">
 			<p>Site name</p>
 		</div>
-		<div class="input-addnew-container">
+		<div class="input-form-container">
 			{!!  Form::text(
 				'site_name',  
 				$accountManager['site_name'], 
@@ -153,5 +158,4 @@
 				<p>Chọn tên file config phần mềm vé</p>
 			</div>
 		</div>
-	</form>
 </fieldset>

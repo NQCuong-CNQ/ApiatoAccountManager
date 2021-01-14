@@ -1,17 +1,17 @@
 <?php
 /**
  * @todo: controller xử lý các nghiệp vụ liên quan đến quản lý AccountManager bằng APIs,
- * - Lay danh sách cấu thành địa chỉ AddressComponent (listAllAddressComponents())
- * - Cap nhat cấu thành địa chỉ AddressComponent (updateAddressComponent())
- * - Thêm mới cấu thành địa chỉ AddressComponent (storeAddressComponent())
- * - Xóa cấu thành địa chỉ AddressComponent (deleteAddressComponent())
- * - cập nhật trạng thái cấu thành địa chỉ AddressComponent (changeStatusAddressComponent())
+ * - Lay danh sách AccountManager  (getAllAccountManagers())
+ * - Cap nhat AccountManager  (updateAccountManager())
+ * - Thêm mới AccountManager  (createAccountManager())
+ * - Xóa AccountManager  (deleteAccountManager())
+ * - Tìm kiếm AccountManager theo ID  (findAccountManagerById())
  */
 namespace App\Containers\AccountManager\UI\API\Controllers;
 
 use App\Containers\AccountManager\Data\Transporters\ProxyGetAllAccountManagerTransporter;
 use App\Containers\AccountManager\Data\Transporters\ProxyCreateAccountManagerTransporter;
-
+use App\Containers\AccountManager\Data\Transporters\ProxyUpdateAccountManagerTransporter;
 use App\Containers\AccountManager\UI\API\Requests\CreateAccountManagerRequest;
 use App\Containers\AccountManager\UI\API\Requests\DeleteAccountManagerRequest;
 use App\Containers\AccountManager\UI\API\Requests\GetAllAccountManagersRequest;
@@ -22,59 +22,58 @@ use App\Ship\Parents\Controllers\ApiController;
 use Apiato\Core\Foundation\Facades\Apiato;
 
 /**
- * Class Controller
+ * Class AccountManagerController
  *
  * @package App\Containers\AccountManager\UI\API\Controllers
  */
-class Controller extends ApiController
+class AccountManagerController extends ApiController
 {
     /**
-     * @todo Lấy danh sách cấu thành địa chỉ
-     * - lấy danh sách tất cả cấu thành địa chỉ
-     * @author Quốc Dũng
-     * @param Request $request
-     * search dùng cho chức năng search tự động theo keyword các field được định nghĩa trong $fieldSearchable AddressComponentRepository
-     * address_component_code : tên cấu thành địa chỉ
-     * address_component_name : mã cấu thành địa chỉ
-     * address_component_alias : tên không dấu / alias để matching dữ liệu cho dễ
-     * address_component_post_code : mã postcode
-     * page lấy dữ liệu theo trang nào
-     * limit lấy giới hạn mỗi trang bao nhiêu dữ liệu
-     * search lọc bằng datatables
-     * include : lấy bảng khóa ngoại của cấu thành địa chỉ
-     * @since 18-05-2020
+     * @todo hàm thêm mới AccountManager
+     * - thêm mới AccountManager bằng dữ liệu Request
+     * @author Cường
+     * @param Request params để thêm mới AccountManager
+     * - company_name : Tên công ty
+     * - app_name : Tên ứng dụng
+     * - app_brand : Loại ứng dụng
+     * - app_code : Mã ứng dụng ENUM('SMARTPOST', 'PMVE', 'TRANSPORT', 'FLEETMANAGEMENT')
+     * - domain_name : Tên domain
+     * - site_name : Tên site
+     * - base_url : Địa chỉ url
+     * @since 14/01/2021
      * @algorithm
-     *  - Gọi đến action ListAllAddressComponentsAction --> task GetAllAddressComponentsTask
-     *  - Giao tiếp với CSLD tbl_location bằng AddressComponentRepository để lấy mảng danh sách cấu thành địa chỉ
+     *  - Gọi đến action CreateAccountManagerAction --> task CreateAccountManagerTask
+     *  - Giao tiếp với CSLD tbl_domain_config bằng AccountManagerRepository
+     *  - Lấy dữ liệu Request truyền vào để thêm mới cho AccountManager đó --> trả về AccountManager vừa thêm mới
      *  - Lấy dữ liệu trả về từ action format bằng AddressComponentTransformer
-     *  - Render ra view danh sách cấu thành địa chỉ bằng dữ liệu đã được format
-     * @change Dũng 08/06/2020
-     * thêm phần phân trang cho serverside datatables
-     * params['limit'] : nếu truyền vào sẽ lấy danh sách cấu thành địa chỉ phân trang bằng $params['limit']
-     * - Giao tiếp với CSLD tbl_location bằng AddressComponentRepository để đếm mảng danh sách cấu thành địa chỉ
+     *  - Trả về dữ liệu json
      */
     public function createAccountManager(CreateAccountManagerRequest $request)
     {
         // từ controller gọi qua action format param
         // và truyền qua action chứ không truyền request
         $params = [
+            // company_name : Tên công ty
             "company_name"          => $request->company_name,
+            // app_name : Tên ứng dụng
             "app_name"              => $request->app_name,
+            // app_brand : Loại ứng dụng
             "app_brand"             => $request->app_brand,
+            // app_code : Mã ứng dụng ENUM('SMARTPOST', 'PMVE', 'TRANSPORT', 'FLEETMANAGEMENT')
             "app_code"              => $request->app_code,
+            // domain_name : Tên domain
             "domain_name"           => $request->domain_name,
+            // site_name : Tên site
             "site_name"             => $request->site_name,
+            // base_url : Địa chỉ url
             "base_url"              => $request->base_url,
         ];
 
-        // lấy danh sách cấu thành địa chỉ
+        // lấy danh sách AccountManager
         $result = Apiato::call('AccountManager@CreateAccountManagerAction', [new ProxyCreateAccountManagerTransporter($params)]);
         $data   = $this->transform($result, AccountManagerTransformer::class);
 
-        // // thông tin phân trang
-        // $meta       = $data['meta'];
-        // $pagination = $meta["pagination"] ?: [];
-        // unset($meta["pagination"]);
+        // lấy chi tiết AccountManager vừa tạo
         $data       = $data['data'] ?: [];
 
         // // trả về dữ liệu response
@@ -89,18 +88,7 @@ class Controller extends ApiController
         ], 200);
     }
 
-    /**
-     * @todo Màn hình form thêm mới partner
-     * - Trả về màn hình thêm mới partner
-     * @author Nguyễn Chiến
-     * @param Request $request
-     * @since 21/09/2020
-     * @return Content
-     * - view form thêm mới partner
-     * @algorithm 
-     * _ phần này không có xử lý nghiệp vụ nên không gọi Action và Task
-     * _ Chỉ trả về view form cho người dùng thêm mới partner
-     */
+    
     public function findAccountManagerById(FindAccountManagerByIdRequest $request)
     {
         $result = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$request]);
@@ -119,18 +107,7 @@ class Controller extends ApiController
         $accountmanager = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$request]);
     }
 
-    /**
-     * @todo Màn hình form thêm mới partner
-     * - Trả về màn hình thêm mới partner
-     * @author Nguyễn Chiến
-     * @param Request $request
-     * @since 21/09/2020
-     * @return Content
-     * - view form thêm mới partner
-     * @algorithm 
-     * _ phần này không có xử lý nghiệp vụ nên không gọi Action và Task
-     * _ Chỉ trả về view form cho người dùng thêm mới partner
-     */
+
     public function getAllAccountManagers(GetAllAccountManagersRequest $request)
     {
         $params = [
@@ -143,7 +120,7 @@ class Controller extends ApiController
             "company_name"          => $request->company_name,
         ];
 
-        // lấy danh sách cấu thành địa chỉ
+        // lấy danh sách AccountManager
         $result = Apiato::call('AccountManager@GetAllAccountManagersAction', [new ProxyGetAllAccountManagerTransporter($params)]);
         $data   = $this->transform($result, AccountManagerTransformer::class);
 
@@ -165,18 +142,7 @@ class Controller extends ApiController
         ], 200);
     }
 
-    /**
-     * @todo Màn hình form thêm mới partner
-     * - Trả về màn hình thêm mới partner
-     * @author Nguyễn Chiến
-     * @param Request $request
-     * @since 21/09/2020
-     * @return Content
-     * - view form thêm mới partner
-     * @algorithm 
-     * _ phần này không có xử lý nghiệp vụ nên không gọi Action và Task
-     * _ Chỉ trả về view form cho người dùng thêm mới partner
-     */
+
     public function updateAccountManager(UpdateAccountManagerRequest $request, $id)
     {
         $params = [
@@ -189,7 +155,7 @@ class Controller extends ApiController
             "base_url"              => $request->base_url,
         ];
 
-        // lấy danh sách cấu thành địa chỉ
+        // lấy danh sách AccountManager
         $result = Apiato::call('AccountManager@UpdateAccountManagerAction', [new ProxyUpdateAccountManagerTransporter($params), $id]);
         $data   = $this->transform($result, AccountManagerTransformer::class);
 
@@ -204,18 +170,6 @@ class Controller extends ApiController
         ], 200);
     }
 
-    /**
-     * @todo Màn hình form thêm mới partner
-     * - Trả về màn hình thêm mới partner
-     * @author Nguyễn Chiến
-     * @param Request $request
-     * @since 21/09/2020
-     * @return Content
-     * - view form thêm mới partner
-     * @algorithm 
-     * _ phần này không có xử lý nghiệp vụ nên không gọi Action và Task
-     * _ Chỉ trả về view form cho người dùng thêm mới partner
-     */
     public function deleteAccountManager(DeleteAccountManagerRequest $request, $id)
     {
         $result = Apiato::call('AccountManager@DeleteAccountManagerAction', [$id]);

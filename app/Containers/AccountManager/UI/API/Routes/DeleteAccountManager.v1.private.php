@@ -22,5 +22,5 @@
 /** @var Route $router */
 $router->delete('accountmanagers/{id}', [
     'as' => 'api_accountmanager_delete_account_manager',
-    'uses'  => 'Controller@deleteAccountManager',
+    'uses'  => 'AccountManagerController@deleteAccountManager',
 ]);

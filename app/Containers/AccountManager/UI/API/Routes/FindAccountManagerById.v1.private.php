@@ -22,5 +22,5 @@
 /** @var Route $router */
 $router->get('accountmanagers/{id}', [
     'as' => 'api_accountmanager_find_account_manager_by_id',
-    'uses'  => 'Controller@findAccountManagerById',
+    'uses'  => 'AccountManagerController@findAccountManagerById',
 ]);
