@@ -14,7 +14,7 @@
 <body>
 
   @yield('content')
-
+  {!!Layout::js()!!}
   <script src="{{asset('js/bootstrap/addons/datatables.min.js')}}"></script>
 </body>
 </html>
