@@ -3,5 +3,8 @@
     "/js/account-manager/route-account-manager.js": "/js/account-manager/route-account-manager.js",
     "/js/account-manager/account-manager/account-manager-api.js": "/js/account-manager/account-manager/account-manager-api.js",
     "/js/account-manager/account-manager/route-account-manager.js": "/js/account-manager/account-manager/route-account-manager.js",
-    "/js/account-manager/includes/BaseApi.js": "/js/account-manager/includes/BaseApi.js"
+    "/js/account-manager/includes/BaseApi.js": "/js/account-manager/includes/BaseApi.js",
+    "/js/account-manager/account-manager/account-manager-datatable.js": "/js/account-manager/account-manager/account-manager-datatable.js",
+    "/js/account-manager/account-manager/AccountManagerApi.js": "/js/account-manager/account-manager/AccountManagerApi.js",
+    "/js/account-manager/account-manager/form-account-manager.js": "/js/account-manager/account-manager/form-account-manager.js"
 }

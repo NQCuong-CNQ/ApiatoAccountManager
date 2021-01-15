@@ -14,7 +14,8 @@
 			'id',  
 			$accountManager['id'], 
 			[
-				'disabled' ,
+				'disabled',
+				'id'    => 'account_manager_id',
 			]) 
 		!!}
 		</div>
@@ -45,10 +46,8 @@
 			'domain_name',  
 			$accountManager['domain_name'], 
 			[
-
-			'id'    => 'domain_name',
-			'placeholder' => 'Tên domain',
-			
+				'id'    => 'domain_name',
+				'placeholder' => 'Tên domain',
 			]
 			) !!}
 			<p>Chỉ nhâp tên domain (vd: nếu là 'buslines.phanmemve.vn' thì sẽ nhập 'buslines')</p>
@@ -63,10 +62,8 @@
 			'base_url',  
 			$accountManager['base_url'], 
 			[
-
-			'id'    => 'base_url',
-			'placeholder' => 'Base URL',
-			
+				'id'    => 'base_url',
+				'placeholder' => 'Base URL',
 			]
 			) !!} 
 			<p>Mặc định ("/"), nếu nhập '/dongphuoc' thì domain đầy đủ sẽ là 'express.phanmemve.vn/dongphuoc'</p>
@@ -81,10 +78,8 @@
 			'app_code',  
 			$accountManager['app_code'], 
 			[
-
-			'id'    => 'app_code',
-			'placeholder' => 'Mã ứng dụng',
-			
+				'id'    => 'app_code',
+				'placeholder' => 'Mã ứng dụng',
 			]
 			) !!} 
 			<p>Mã ứng dụng là tên công ty viết liền không dấu</p>
@@ -99,10 +94,8 @@
 			'app_name',  
 			$accountManager['app_name'], 
 			[
-
-			'id'    => 'app_name',
-			'placeholder' => 'Tên ứng dụng',
-			
+				'id'    => 'app_name',
+				'placeholder' => 'Tên ứng dụng',
 			]
 			) !!} 
 			<p></p>
@@ -149,10 +142,8 @@
 				'site_name',  
 				$accountManager['site_name'], 
 				[
-
-				'id'    => 'site_name',
-				'placeholder' => 'Site name',
-				
+					'id'    => 'site_name',
+					'placeholder' => 'Site name',
 				]
 				) !!} 
 				<p>Chọn tên file config phần mềm vé</p>

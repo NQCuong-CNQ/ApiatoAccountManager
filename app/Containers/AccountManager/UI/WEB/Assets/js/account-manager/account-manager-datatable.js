@@ -1,24 +1,23 @@
-import BaseApi from '../includes/BaseApi';
+import AccountManagerApi from '../account-manager/AccountManagerApi';
 
 (function ($, phpData) {
     
   phpData = phpData || {};
 
-  class AccountManagerApi extends BaseApi{
+  class AccountManageDataTable{
 
-    constructor(APIs) {
-      super(APIs);
+    constructor() {
+      this.API = new AccountManagerApi(phpData);
     }
 
     initDataTable() {
-      var data= window.PHP_DATA;
-        
+     
       var table = $("#datatable-list-all").DataTable({
             "scrollX": true,
             "responsive": false,
             "Processing": true,
             "ServerSide": true, 
-            "sAjaxSource": data['API_GET_ALL_ACCOUNT_MANAGERS'],
+            "sAjaxSource": phpData['API_GET_ALL_ACCOUNT_MANAGERS'],
             "columns": [
                 {data :'id'},
                 {data :'company_name'},
@@ -30,6 +29,8 @@ import BaseApi from '../includes/BaseApi';
             "paging": true,
         });
 
+      var thisAPI = this.API;
+
       $('#datatable-list-all tbody').on('click', 'tr', function () {
         if ($(this).hasClass('selected')) {
           $(this).removeClass('selected');
@@ -39,18 +40,20 @@ import BaseApi from '../includes/BaseApi';
         }
 
         var id = table.row(this).data()['id'];
-
-        var api = getAPI("API_GET_ACCOUNT_MANAGERS_BY_ID", {
+        var api = thisAPI.getAPI("WEB_GET_ACCOUNT_MANAGERS_BY_ID", {
           __ACCOUNT_MANAGER_ID__ : id
         });
+
+        location.href = api;
+        
       });
     }
   }
   // document ready
   $(function () {
       // khởi tạo class
-      var accountManagerApi = new AccountManagerApi(phpData);
+      var accountManageDataTable = new AccountManageDataTable();
       // khởi chạy hàm init
-      accountManagerApi.initDataTable();
+      accountManageDataTable.initDataTable();
   });
 }.bind(window))(jQuery, window.PHP_DATA);

@@ -4,7 +4,7 @@
 <h3 class="title-app">Quản lý tài khoản</h3>
 <div class="w-100 d-flex flex-row-reverse mb-4">
 	<a href="{{route('web_accountmanager_create')}}">
-		<button id="btn-addnew" class="btn-add">Add New</button>
+		<button class="btn-add">Add New</button>
 	</a>
 </div>
 

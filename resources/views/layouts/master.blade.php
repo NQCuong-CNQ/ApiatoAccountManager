@@ -8,6 +8,9 @@
   <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
+
+  <link rel="stylesheet" href="{{asset('css/sweetalert2.css')}}">
+  <script src="{{asset('js/sweetalert2.js')}}"></script>
   <script src="{{asset('js/bootstrap/jquery-3.5.1.min.js')}}"></script>
 
 </head>
@@ -16,6 +19,8 @@
   @yield('content')
   @include('layout::includes.phpData')
   {!!Layout::js()!!}
+  
   <script src="{{asset('js/bootstrap/addons/datatables.min.js')}}"></script>
+
 </body>
 </html>
