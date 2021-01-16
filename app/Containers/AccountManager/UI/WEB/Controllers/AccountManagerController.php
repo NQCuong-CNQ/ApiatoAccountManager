@@ -1,13 +1,16 @@
 <?php
-
+/**
+ * @todo: controller xử lý các nghiệp vụ liên quan đến account manager, 
+ * - Lay danh sach account manager (getAllAccountManagers())
+ * - Xem chi tiết account manager (findAccountManagerById())
+ * - form cập nhật account manager (editAccountManager())
+ * - form thêm mới account manager (createAccountManager())
+ */
 namespace App\Containers\AccountManager\UI\WEB\Controllers;
 
 use App\Containers\AccountManager\UI\WEB\Requests\CreateAccountManagerRequest;
-use App\Containers\AccountManager\UI\WEB\Requests\DeleteAccountManagerRequest;
 use App\Containers\AccountManager\UI\WEB\Requests\GetAllAccountManagersRequest;
 use App\Containers\AccountManager\UI\WEB\Requests\FindAccountManagerByIdRequest;
-use App\Containers\AccountManager\UI\WEB\Requests\UpdateAccountManagerRequest;
-use App\Containers\AccountManager\UI\WEB\Requests\StoreAccountManagerRequest;
 use App\Containers\AccountManager\UI\WEB\Requests\EditAccountManagerRequest;
 use App\Ship\Parents\Controllers\WebController;
 use Apiato\Core\Foundation\Facades\Apiato;
@@ -20,22 +23,31 @@ use Apiato\Core\Foundation\Facades\Apiato;
 class AccountManagerController extends WebController
 {
     /**
-     * Show all entities
-     *
+     * @todo Màn hình danh sách account manager
+     * - lấy danh sách tất cả account manager
+     * @author Cuờng
      * @param GetAllAccountManagersRequest $request
+     * @since 16-01-2021
+     * @return view
      */
-    public function index(GetAllAccountManagersRequest $request)
+    public function getAllAccountManagers(GetAllAccountManagersRequest $request)
     {
-
         return view('accountmanager::account-manager.account-manager');
     }
 
     /**
-     * Show one entity
-     *
+     * @todo Màn hình form chi tiết account manager
+     * - lấy thông tin chi tiết account manager bằng id đưa vào form chi tiết
+     * @author Cuờng
      * @param FindAccountManagerByIdRequest $request
+     * @param id $id của account manager cần chi tiết
+     * @since 16-01-2021
+     * @return view
+     * @algorithm 
+     *  - Gọi đến action FindAccountManagerByIdAction --> task FindAccountManagerByIdTask
+     *  - Giao tiếp với CSLD tbl_domain_config bằng AccountManagerRepository để lấy chi tiết account manager bằng $id 
      */
-    public function show(FindAccountManagerByIdRequest $request, $id)
+    public function findAccountManagerById(FindAccountManagerByIdRequest $request, $id)
     {
         $accountManager = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$id]);
 
@@ -43,60 +55,38 @@ class AccountManagerController extends WebController
     }
 
     /**
-     * Create entity (show UI)
-     *
+     * @todo Màn hình form thêm mới account manager
+     * - Trả về màn hình thêm mới account manager
+     * @author Cuờng
      * @param CreateAccountManagerRequest $request
+     * @since 16-01-2021
+     * @return view
+     * @algorithm 
+     * _ phần này không có xử lý nghiệp vụ nên không gọi Action và Task
+     * _ Chỉ trả về view form cho người dùng thêm mới account manager
      */
-    public function create(CreateAccountManagerRequest $request)
+    public function createAccountManager(CreateAccountManagerRequest $request)
     {
         return view('accountmanager::account-manager.addnew-account-manager');
     }
 
     /**
-     * Add a new entity
-     *
-     * @param StoreAccountManagerRequest $request
-     */
-    public function store(StoreAccountManagerRequest $request)
-    {
-        $accountmanager = Apiato::call('AccountManager@CreateAccountManagerAction', [$request]);
-
-        // ..
-    }
-
-    /**
-     * Edit entity (show UI)
-     *
+     * @todo Màn hình form cập nhật account manager
+     * - lấy thông tin chi tiết account manager bằng id đưa vào form cập nhật
+     * @author Cuờng
      * @param EditAccountManagerRequest $request
+     * @param id $id của account manager cần cập nhật
+     * @since 16-01-2021
+     * @return view
+     * @algorithm 
+     *  - Gọi đến action FindAccountManagerByIdAction --> task FindAccountManagerByIdTask
+     *  - Giao tiếp với CSLD tbl_domain_config bằng AccountManagerRepository để lấy chi tiết account manager bằng $id
      */
-    public function edit(EditAccountManagerRequest $request, $id)
+    public function editAccountManager(EditAccountManagerRequest $request, $id)
     {
         $accountManager = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$id]);
 
         return view('accountmanager::account-manager.edit-account-manager')->with('accountManager', $accountManager);
     }
 
-    /**
-     * Update a given entity
-     *
-     * @param UpdateAccountManagerRequest $request
-     */
-    public function update(UpdateAccountManagerRequest $request)
-    {
-        $accountmanager = Apiato::call('AccountManager@UpdateAccountManagerAction', [$request]);
-
-        // ..
-    }
-
-    /**
-     * Delete a given entity
-     *
-     * @param DeleteAccountManagerRequest $request
-     */
-    public function delete(DeleteAccountManagerRequest $request)
-    {
-         $result = Apiato::call('AccountManager@DeleteAccountManagerAction', [$request]);
-
-         // ..
-    }
 }

@@ -125,7 +125,7 @@ import AccountManagerApi from '../account-manager/AccountManagerApi';
         */
 	  	initEventListeners(){
 	  		//lưu ngữ cảnh của class để sử dụng lại trong func
-	  		var self = this;
+	  		let self = this;
 	  		// sự kiện bấm nút thêm mới
 			$('#btn-addnew').click(function() {
 			  	self.onCreate(event);

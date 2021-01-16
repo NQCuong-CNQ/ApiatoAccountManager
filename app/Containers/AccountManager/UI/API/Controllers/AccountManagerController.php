@@ -45,7 +45,7 @@ class AccountManagerController extends ApiController
      *  - Gọi đến action CreateAccountManagerAction --> task CreateAccountManagerTask
      *  - Giao tiếp với CSLD tbl_domain_config bằng AccountManagerRepository
      *  - Lấy dữ liệu Request truyền vào để thêm mới cho AccountManager đó --> trả về AccountManager vừa thêm mới
-     *  - Lấy dữ liệu trả về từ action format bằng AddressComponentTransformer
+     *  - Lấy dữ liệu trả về từ action format bằng AccountManagerTransformer
      *  - Trả về dữ liệu json
      */
     public function createAccountManager(CreateAccountManagerRequest $request)
@@ -81,33 +81,63 @@ class AccountManagerController extends ApiController
             'success'     => true,
             'STATUS'      => "OK",
             'status_code' => 200,
-            // 'message'     => trans('address::address-component.api.list_all_address_components'),
+            'message'     => 'Thêm mới thành công',
             'data'        => $data,
             // 'pagination'  => $pagination,
             // 'meta'        => $meta,
         ], 200);
     }
 
-    
-    public function findAccountManagerById(FindAccountManagerByIdRequest $request)
+    /**
+     * @todo Hàm lấy dữ liệu chi tiết của account manager 
+     * Hàm sử dụng khi người dùng cần lấy dữ liệu account manager
+     * @algorithm
+     *  - Gọi đến action FindAccountManagerByIdAction --> task FindAccountManagerByIdTask
+     *  - Giao tiếp với CSLD tbl_domain_config bằng AccountManagerRepository để lấy mảng danh sách account manager
+     *  - Lấy dữ liệu trả về từ action format bằng AccountManagerTransformer
+     *  - Trả về dữ liệu json
+     * @author Cường
+     * @param $id của account manager cần lấy dữ liệu
+     * @param FindAccountManagerByIdRequest $request
+     * @since 16-01-2021
+     */
+    public function findAccountManagerById(FindAccountManagerByIdRequest $request, $id)
     {
-        $result = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$request]);
+        $result = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$id]);
         $data = $this->transform($result, AccountManagerTransformer::class);
         // lấy dữ liệu chi tiết địa chỉ
-        $addressComponent = $data['data'] ?: [];
+        $AccountManager = $data['data'] ?: [];
         // trả về dữ liệu response
         return response()->json([
             'success'       => true,
             'STATUS'        => "OK",
             'status_code'   => 200,
-            // 'message'       => trans('address::address-component.api.find_by_id_address_component'),
-            'data'          => $addressComponent,
+            'message'       => 'Tìm kiếm thành công',
+            'data'          => $AccountManager,
         ], 200);
 
         $accountmanager = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$request]);
     }
 
-
+    /**
+     * @todo Lấy danh sách account manager
+     * - lấy danh sách tất cả account manager
+     * @author Cường
+     * @param GetAllAccountManagersRequest $request
+     * - company_name : Tên công ty
+     * - app_name : Tên ứng dụng
+     * - app_brand : Loại ứng dụng
+     * - app_code : Mã ứng dụng ENUM('SMARTPOST', 'PMVE', 'TRANSPORT', 'FLEETMANAGEMENT')
+     * - domain_name : Tên domain
+     * - site_name : Tên site
+     * - base_url : Địa chỉ url
+     * @since 16-01-2021
+     * @algorithm
+     *  - Gọi đến action GetAllAccountManagersAction --> task GetAllAccountManagersTask
+     *  - Giao tiếp với CSLD tbl_domain_config bằng AccountManagerRepository để lấy mảng danh sách account manager
+     *  - Lấy dữ liệu trả về từ action format bằng AccountManagerTransformer
+     *  - Trả về dữ liệu json
+     */
     public function getAllAccountManagers(GetAllAccountManagersRequest $request)
     {
         $params = [
@@ -135,14 +165,34 @@ class AccountManagerController extends ApiController
             'success'     => true,
             'STATUS'      => "OK",
             'status_code' => 200,
-            // 'message'     => trans('address::address-component.api.list_all_address_components'),
+            'message'     => 'Lấy dữ liệu thành công',
             'data'        => $data,
             'pagination'  => $pagination,
             'meta'        => $meta,
         ], 200);
     }
 
-
+    /**
+     * @todo hàm cập nhật account manager
+     * - tìm account manager cần cập nhật bằng uuid
+     * @author Cường
+     * @param id $id account manager cần cập nhật
+     * @param Request params để cập nhật account manager
+     * - company_name : Tên công ty
+     * - app_name : Tên ứng dụng
+     * - app_brand : Loại ứng dụng
+     * - app_code : Mã ứng dụng ENUM('SMARTPOST', 'PMVE', 'TRANSPORT', 'FLEETMANAGEMENT')
+     * - domain_name : Tên domain
+     * - site_name : Tên site
+     * - base_url : Địa chỉ url
+     * @since 16-01-2021
+     * @algorithm
+     *  - Gọi đến action UpdateAccountManagerAction --> task UpdateAccountManagerTask
+     *  - Giao tiếp với CSLD tbl_domain_config bằng AccountManagerRepository
+     *  - Lấy dữ liệu Request truyền vào để cập nhật cho account manager đó --> trả về account manager vừa thêm mới
+     *  - Lấy dữ liệu trả về từ action format bằng AccountManagerTransformer
+     *  - Trả về dữ liệu json
+     */
     public function updateAccountManager(UpdateAccountManagerRequest $request, $id)
     {
         $params = [
@@ -165,11 +215,23 @@ class AccountManagerController extends ApiController
             'success'       => true,
             'STATUS'        => "OK",
             'status_code'   => 200,
-            // 'message'       => trans('address::address-component.api.update_address_component'),
+            'message'       => 'Câp nhật thành công',
             'data'          => $accountManager,
         ], 200);
     }
 
+    /**
+     * @todo Xóa account manager
+     * - tìm account manager bằng $id truyền vào và xóa account manager đó
+     * @author Cường
+     * @param Id $id của account manager muốn xóa
+     * @since 16-01-2021
+     * @algorithm
+     *  - Gọi đến action DeleteAccountManagerAction --> task DeleteAccountManagerTask
+     *  - Giao tiếp với CSLD tbl_domain_config bằng AccountManagerRepository để account manager bằng $uuid
+     *  - Xóa account manager vừa tìm vào trả về response
+     *  - Trả về dữ liệu json
+     */
     public function deleteAccountManager(DeleteAccountManagerRequest $request, $id)
     {
         $result = Apiato::call('AccountManager@DeleteAccountManagerAction', [$id]);
@@ -178,7 +240,7 @@ class AccountManagerController extends ApiController
             'success'       => true,
             'STATUS'        => "OK",
             'status_code'   => 200,
-            // 'message'       => trans('address::address-component.api.delete_address_component'),
+            'message'       => 'Đã xóa thành công',
         ], 200);
     }
 }
