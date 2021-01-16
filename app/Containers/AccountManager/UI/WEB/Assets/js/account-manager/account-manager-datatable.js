@@ -1,9 +1,18 @@
 import AccountManagerApi from '../account-manager/AccountManagerApi';
 
+// scope
 (function ($, phpData) {
     
   phpData = phpData || {};
 
+  /**
+   * @todo: Class hiển thị bảng AccountManager
+   * @purpose: 
+   * - mục đích: hiển thị danh sách các AccountManager và xử lý sự kiện onclick
+   * @author: Cường
+   * @since: 15-01-2021
+   * @param 
+  */
   class AccountManageDataTable{
 
     constructor() {

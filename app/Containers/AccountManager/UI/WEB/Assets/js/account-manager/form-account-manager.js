@@ -1,14 +1,31 @@
 import AccountManagerApi from '../account-manager/AccountManagerApi';
 
+// scope
 (function ($, phpData) {
 
     phpData = phpData || {};
 
+    /**
+     * @todo: Form thêm, cập nhật, xóa account manager
+     * @purpose: 
+     * - mục đích: tạo, cập nhật hoặc xóa các thông tin của account manager
+     * @author: Cường
+     * @since: 15-01-2021
+     * @param jQuery form
+    */
 	class FormAccountManager{
 		constructor(){
 			this.API = new AccountManagerApi(phpData);
 		}
 
+        /**
+         * @todo: Sự kiện Create form
+         * @purpose: 
+         * - khi submit thì gọi lên API để tạo mới account manager
+         * @author: Cường
+         * @since: 15-01-2021
+         * @param jQueryEvent
+        */
 		async onCreate(e) {
 
 			e.stopPropagation();
@@ -26,6 +43,14 @@ import AccountManagerApi from '../account-manager/AccountManagerApi';
 			})
 	  	};
 
+        /**
+         * @todo: Sự kiện Update form
+         * @purpose: 
+         * - khi submit thì gọi lên API để cập nhật account manager
+         * @author: Cường
+         * @since: 15-01-2021
+         * @param jQueryEvent
+        */
 	  	async onUpdate(e) {
 
 			e.stopPropagation();
@@ -44,6 +69,14 @@ import AccountManagerApi from '../account-manager/AccountManagerApi';
 			})
 	  	};
 
+        /**
+         * @todo: Sự kiện Delete form
+         * @purpose: 
+         * - khi submit thì gọi lên API để xóa account manager
+         * @author: Cường
+         * @since: 15-01-2021
+         * @param jQueryEvent
+        */
 	  	onDelete(e) {
 
 			e.stopPropagation();
@@ -82,17 +115,26 @@ import AccountManagerApi from '../account-manager/AccountManagerApi';
 			})
 	  	};
 
+        /**
+         * @todo: Hàm khởi tạo các sự kiện trong form
+         * @purpose: 
+         * - mục đích:
+         *      tập trung các sự kiện về 1 chỗ cho dễ quản lý
+         * @author: Cường
+         * @since: 15-01-2021
+        */
 	  	initEventListeners(){
+	  		//lưu ngữ cảnh của class để sử dụng lại trong func
 	  		var self = this;
-
+	  		// sự kiện bấm nút thêm mới
 			$('#btn-addnew').click(function() {
 			  	self.onCreate(event);
 			});
-
+	  		// sự kiện bấm nút xóa
 			$('#btn-delete').click(function() {
 			  	self.onDelete(event);
 			});
-
+	  		// sự kiện bấm nút lưu
 			$('#btn-update').click(function() {
 			  	self.onUpdate(event);
 			});
@@ -100,8 +142,9 @@ import AccountManagerApi from '../account-manager/AccountManagerApi';
 	}
 
     $(function() {
-
+      	// khởi tạo class
         let formAccountManager = new FormAccountManager();
+        // khởi chạy hàm init
         formAccountManager.initEventListeners();
     });
     

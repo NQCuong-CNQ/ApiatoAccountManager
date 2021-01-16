@@ -32,7 +32,6 @@
 			[
 				'id'    => 'company_name',
 				'placeholder' => 'Tên công ty',
-				'required',
 			]) 
 		!!}
 		</div>
