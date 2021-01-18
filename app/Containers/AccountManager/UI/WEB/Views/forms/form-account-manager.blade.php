@@ -106,30 +106,29 @@
 		</div>
 		<div class="input-radio-form-container">
 			<div>
-				{{ Form::radio('app_brand', '1', false, array('id'=>'app_brand_pmv')) }}
+				{{ Form::radio('app_brand', '1', true, ['id'=>'app_brand_pmv']) }}
 				{{ Form::label('app_brand_pmv', 'Phần mềm vé') }}
 			</div>
 			<div>
-				{{ Form::radio('app_brand', '2', false, array('id'=>'app_brand_wpmv')) }}
+				{{ Form::radio('app_brand', '2', false, ['id'=>'app_brand_wpmv']) }}
 				{{ Form::label('app_brand_wpmv', 'Website phần mềm vé') }}
 			</div>
 			<div>
-				{{ Form::radio('app_brand', '3', false, array('id'=>'app_brand_pmh')) }}
+				{{ Form::radio('app_brand', '3', false, ['id'=>'app_brand_pmh']) }}
 				{{ Form::label('app_brand_pmh', 'Phần mềm hàng') }}
 			</div>
 			<div>
-				{{ Form::radio('app_brand', '4', false, array('id'=>'app_brand_tpmh')) }}
+				{{ Form::radio('app_brand', '4', false, ['id'=>'app_brand_tpmh']) }}
 				{{ Form::label('app_brand_tpmh', 'Tracking phần mềm hàng') }}
 			</div>
 			<div>
-				{{ Form::radio('app_brand', '5', false, array('id'=>'app_brand_ns')) }}
+				{{ Form::radio('app_brand', '5', false, ['id'=>'app_brand_ns']) }}
 				{{ Form::label('app_brand_ns', 'Nhân sự') }}
 			</div>
 			<div>
-				{{ Form::radio('app_brand', '6', false, array('id'=>'app_brand_m')) }}
+				{{ Form::radio('app_brand', '6', false, ['id'=>'app_brand_m']) }}
 				{{ Form::label('app_brand_m', 'Manual (tự cấu hình)') }}
 			</div>
-
 		</div>
 	</div>
 	<div class="d-flex mt-3">
@@ -149,3 +148,10 @@
 			</div>
 		</div>
 </fieldset>
+
+@php
+  JavaScript::put([
+    // App Brand
+    "APP_BRAND" => $accountManager->app_brand,
+  ]);
+@endphp

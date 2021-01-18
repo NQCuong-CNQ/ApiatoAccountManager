@@ -39,24 +39,27 @@ class AccountManagerTransformer extends Transformer
             'base_url'              => $accountManager->base_url,
             'company_name'          => $accountManager->company_name,
             'start_date'            => $accountManager->start_date,
+
             // // các link quản lý
             // 'links'     =>  [
             //     // create
-            //     'create'                =>  route('web_get_address_create_address_component'),
-            //     // store
-            //     'api_create'                 =>  route('api_post_address_store_address_component'),
-            //     // chi tiết
-            //     'detail'            =>  route('web_get_address_find_by_id_address_component', $accountManager->address_component_uuid),
+            //     'create'                =>  route('web_accountmanager_create'),
+            //     // find
+            //     'find'                 =>  route('web_accountmanager_show', $accountManager->id),
+            //     // danh sach
+            //     'get_index'            =>  route('web_accountmanager_index'),
             //     // edit
-            //     'edit'                  =>  route('web_get_address_edit_address_component', $accountManager->address_component_uuid),
+            //     'edit'                  =>  route('web_accountmanager_edit', $accountManager->id),
             //     // update
-            //     'api_update'                =>  route('api_put_address_update_address_component', $accountManager->address_component_uuid),
+            //     'api_update'                =>  route('api_accountmanager_update_account_manager', $accountManager->id),
             //     // delete
-            //     'api_delete'                =>  route('api_delete_address_delete_address_component', $accountManager->address_component_uuid),
-            //     // change status
-            //     'api_change_status'         =>  route('api_put_address_change_status_address_component', $accountManager->address_component_uuid),
-            //     // get detail
-            //     'api_find_by_uuid'        =>  route('api_get_address_find_by_id_address_component', $accountManager->address_component_uuid),  
+            //     'api_delete'                =>  route('api_accountmanager_delete_account_manager', $accountManager->id),
+            //     // tim kiem
+            //     'api_find'         =>  route('api_accountmanager_find_account_manager_by_id', $accountManager->id),
+            //     // them oi
+            //     'api_create'        =>  route('api_accountmanager_create_account_manager'),  
+            //     // danh sach
+            //     'api_get_all'        =>  route('api_accountmanager_update_account_manager'),  
             // ],
         ];
         

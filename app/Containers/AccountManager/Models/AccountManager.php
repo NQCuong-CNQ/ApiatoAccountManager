@@ -27,7 +27,7 @@ class AccountManager extends Model
     protected $fillable = [
         // int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
         'id',
-        //  enum('SMARTPOST', 'PMVE', 'TRANSPORT', 'FLEETMANAGEMENT') COLLATE utf8_general_ci DEFAULT NULL COMMENT 'Quản lý loại sản phẩm nào : Phần mềm vé , SmartPost',
+        //  enum('PMVE','WEBSITE_PMVE','PMHANG','TRACKING_PMHANG','NHAN_SU','MANUAL') COLLATE utf8_general_ci DEFAULT NULL COMMENT 'Quản lý loại sản phẩm nào : Phần mềm vé , SmartPost',
         'app_brand',
         //  varchar(255) COLLATE utf8_general_ci DEFAULT NULL COMMENT 'Mã ứng dụng',
         'app_code',

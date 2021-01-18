@@ -30,7 +30,7 @@
   JavaScript::put([
     // AccountMmanager ID
     "ACCOUNT_MANAGER_ID" => $accountManager->id,
-      
+
     // link API xóa Account Manager
     "API_DELETE_ACCOUNT_MANAGERS" => route("api_accountmanager_delete_account_manager", ["__ACCOUNT_MANAGER_ID__"]),
 

@@ -11,7 +11,14 @@ class GetAllAccountManagersAction extends Action
 {
     public function run(DataTransporter $params)
     {
-        $accountmanagers = Apiato::call('AccountManager@GetAllAccountManagersTask', [], ['addRequestCriteria']);
+        $accountmanagers = Apiato::call('AccountManager@GetAllAccountManagersTask', [], ['
+        	
+        	addRequestCriteria',
+
+        	"withParameters" => [$params],
+
+        	"skipPagination" => [(boolean)$params->skipPagination],
+    	]);
 
         return $accountmanagers;
     }

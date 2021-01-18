@@ -37,7 +37,7 @@ import AccountManagerApi from '../account-manager/AccountManagerApi';
 
 	 	    Swal.fire({
 			  icon: 'success',
-			  title: 'Đã thêm!',
+			  title: 'Đã cập nhật!',
 			  showConfirmButton: true,
 			  timer: 1000
 			})
@@ -138,6 +138,35 @@ import AccountManagerApi from '../account-manager/AccountManagerApi';
 			$('#btn-update').click(function() {
 			  	self.onUpdate(event);
 			});
+
+			self.getRadioBtnValue();
+		}
+
+        /**
+         * @todo: Hàm lấy giá trị của app_brand
+         * @purpose: 
+         * - mục đích:
+         *      lấy giá trị của app_brand và set lên form trên giao diện
+         * @author: Cường
+         * @since: 18-01-2021
+        */
+		getRadioBtnValue(){
+			var app_brand = phpData['APP_BRAND'];
+
+	        switch (app_brand){
+	          case 'PMVE': $('#app_brand_pmv').prop('checked', true); 
+	          break;
+	          case 'WEBSITE_PMVE': $('#app_brand_wpmv').prop('checked', true); 
+	          break;
+	          case 'PMHANG': $('#app_brand_pmh').prop('checked', true); 
+	          break;
+	          case 'TRACKING_PMHANG': $('#app_brand_tpmh').prop('checked', true); 
+	          break;
+	          case 'NHAN_SU': $('#app_brand_ns').prop('checked', true); 
+	          break;
+	          case 'MANUAL': $('#app_brand_m').prop('checked', true); 
+	          break;
+	        }
 		}
 	}
 

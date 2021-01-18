@@ -7,8 +7,8 @@
  * @param DataTransporter
  * - company_name : Tên công ty
  * - app_name : Tên ứng dụng
- * - app_brand : Loại ứng dụng
- * - app_code : Mã ứng dụng ENUM('SMARTPOST', 'PMVE', 'TRANSPORT', 'FLEETMANAGEMENT')
+ * - app_brand : Loại ứng dụng ENUM('PMVE','WEBSITE_PMVE','PMHANG','TRACKING_PMHANG','NHAN_SU','MANUAL')
+ * - app_code : Mã ứng dụng
  * - domain_name : Tên domain
  * - site_name : Tên site
  * - base_url : Địa chỉ url
@@ -49,9 +49,9 @@ class UpdateAccountManagerTask extends Task
                 'company_name'      => $data->company_name,
                 // app_name : Tên ứng dụng
                 'app_name'          => $data->app_name,
-                // app_brand : Loại ứng dụng
+                // app_brand : Loại ứng dụng ENUM('PMVE','WEBSITE_PMVE','PMHANG','TRACKING_PMHANG','NHAN_SU','MANUAL')
                 'app_brand'         => $data->app_brand,
-                // app_code : Mã ứng dụng ENUM('SMARTPOST', 'PMVE', 'TRANSPORT', 'FLEETMANAGEMENT')
+                // app_code : Mã ứng dụng 
                 'app_code'          => $data->app_code,
                 // domain_name : Tên domain
                 'domain_name'       => $data->domain_name,

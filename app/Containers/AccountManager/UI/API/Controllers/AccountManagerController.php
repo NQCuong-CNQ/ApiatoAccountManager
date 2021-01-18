@@ -35,8 +35,8 @@ class AccountManagerController extends ApiController
      * @param Request params để thêm mới AccountManager
      * - company_name : Tên công ty
      * - app_name : Tên ứng dụng
-     * - app_brand : Loại ứng dụng
-     * - app_code : Mã ứng dụng ENUM('SMARTPOST', 'PMVE', 'TRANSPORT', 'FLEETMANAGEMENT')
+     * - app_brand : Loại ứng dụng ENUM('PMVE','WEBSITE_PMVE','PMHANG','TRACKING_PMHANG','NHAN_SU','MANUAL')
+     * - app_code : Mã ứng dụng
      * - domain_name : Tên domain
      * - site_name : Tên site
      * - base_url : Địa chỉ url
@@ -57,9 +57,9 @@ class AccountManagerController extends ApiController
             "company_name"          => $request->company_name,
             // app_name : Tên ứng dụng
             "app_name"              => $request->app_name,
-            // app_brand : Loại ứng dụng
+            // app_brand : Loại ứng dụng ENUM('PMVE','WEBSITE_PMVE','PMHANG','TRACKING_PMHANG','NHAN_SU','MANUAL')
             "app_brand"             => $request->app_brand,
-            // app_code : Mã ứng dụng ENUM('SMARTPOST', 'PMVE', 'TRANSPORT', 'FLEETMANAGEMENT')
+            // app_code : Mã ứng dụng
             "app_code"              => $request->app_code,
             // domain_name : Tên domain
             "domain_name"           => $request->domain_name,
@@ -126,8 +126,8 @@ class AccountManagerController extends ApiController
      * @param GetAllAccountManagersRequest $request
      * - company_name : Tên công ty
      * - app_name : Tên ứng dụng
-     * - app_brand : Loại ứng dụng
-     * - app_code : Mã ứng dụng ENUM('SMARTPOST', 'PMVE', 'TRANSPORT', 'FLEETMANAGEMENT')
+     * - app_brand : Loại ứng dụng ENUM('PMVE','WEBSITE_PMVE','PMHANG','TRACKING_PMHANG','NHAN_SU','MANUAL')
+     * - app_code : Mã ứng dụng
      * - domain_name : Tên domain
      * - site_name : Tên site
      * - base_url : Địa chỉ url
@@ -150,6 +150,8 @@ class AccountManagerController extends ApiController
             "company_name"          => $request->company_name,
         ];
 
+        // nếu có skip paginate
+        $params['skipPagination'] = $request->skipPagination;
         // lấy danh sách AccountManager
         $result = Apiato::call('AccountManager@GetAllAccountManagersAction', [new ProxyGetAllAccountManagerTransporter($params)]);
         $data   = $this->transform($result, AccountManagerTransformer::class);
@@ -180,8 +182,8 @@ class AccountManagerController extends ApiController
      * @param Request params để cập nhật account manager
      * - company_name : Tên công ty
      * - app_name : Tên ứng dụng
-     * - app_brand : Loại ứng dụng
-     * - app_code : Mã ứng dụng ENUM('SMARTPOST', 'PMVE', 'TRANSPORT', 'FLEETMANAGEMENT')
+     * - app_brand : Loại ứng dụng ENUM('PMVE','WEBSITE_PMVE','PMHANG','TRACKING_PMHANG','NHAN_SU','MANUAL')
+     * - app_code : Mã ứng dụng
      * - domain_name : Tên domain
      * - site_name : Tên site
      * - base_url : Địa chỉ url

@@ -14,12 +14,23 @@
  *
  * @apiSuccessExample  {json}  Success-Response:
  * HTTP/1.1 200 OK
-{
-  // Insert the response of the request here...
-}
+ * {
+ *   "success": true,
+ *   "STATUS": "OK",
+ *   "status_code": 200,
+ *   "message": "Xóa account manager thành công"
+ * }
  */
 
-/** @var Route $router */
+/** ###ITVINA comment: ở đây sẽ giải thích use case theo người dùng của ứng dụng
+ * @todo: xóa account manager.
+ * @Usage(use case): Địa chỉ muốn xóa account manager (delete AccountManager)
+ * @Input: id account manager
+ * @Output: Response 200
+ * @Flow: 
+ * - B1: người dùng click vào nút xóa account manager -- gọi API truyền id
+ * - B2: xóa account manager đã chọn và trả về response thông báo thành công
+*/
 $router->delete('accountmanagers/{id}', [
     'as' => 'api_accountmanager_delete_account_manager',
     'uses'  => 'AccountManagerController@deleteAccountManager',
