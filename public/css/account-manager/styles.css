@@ -70,3 +70,4 @@ body{
 	border-color: red;
 	box-shadow: none;
 }
+th, td { white-space: nowrap; }
