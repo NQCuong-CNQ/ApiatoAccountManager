@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="d-flex justify-content-between">
-  <h3>Thông tin ứng dụng</h3>
+  <h3>{{trans("accountmanager::account-manager.headers.detail")}}</h3>
   <div class="d-flex">
-    <a href="{{route('web_accountmanager_index')}}" class="btn-back mr-3"><button class="btn-back">Quay về</button></a>
+    <a href="{{route('web_accountmanager_index')}}" class="btn-back mr-3"><button class="btn-back">{{trans("accountmanager::account-manager.buttons.back")}}</button></a>
 
-    <a href="{{route('web_accountmanager_edit', [$accountManager->id])}}" class="mr-3"><button class="btn-save" type="submit">Chỉnh sửa</button></a>
+    <a href="{{route('web_accountmanager_edit', [$accountManager->id])}}" class="mr-3"><button class="btn-save" type="submit">{{trans("accountmanager::account-manager.buttons.edit")}}</button></a>
 
-    <button id="btn-delete" class="btn-delete">Xóa</button>        
+    <button id="btn-delete" class="btn-delete">{{trans("accountmanager::account-manager.buttons.delete")}}</button>        
 
   </div>
 </div>

@@ -7,7 +7,7 @@
 	@if(!$isNew)
 	<div class="d-flex mt-3">
 		<div class="label-form-container">
-			<p>ID</p>
+			<p>{{trans("accountmanager::account-manager.labels.id")}}</p>
 		</div>
 		<div class="input-form-container">
 			{!!  Form::text(
@@ -23,7 +23,7 @@
 	@endif
 	<div class="d-flex mt-3">
 		<div class="label-form-container">
-			<p>Tên công ty</p>
+			<p>{{trans("accountmanager::account-manager.labels.company_name")}}</p>
 		</div>
 		<div class="input-form-container">
 		{!!  Form::text(
@@ -31,14 +31,16 @@
 			$accountManager['company_name'], 
 			[
 				'id'    => 'company_name',
-				'placeholder' => 'Tên công ty',
+				'placeholder' => trans("accountmanager::account-manager.placeholders.company_name"),
+				'data-toggle' => 'tooltip',
+				'title' => trans("accountmanager::account-manager.validations.company_name.required"),
 			]) 
 		!!}
 		</div>
 	</div>
 	<div class="d-flex mt-3">
 		<div class="label-form-container">
-			<p>Tên domain</p>
+			<p>{{trans("accountmanager::account-manager.labels.domain_name")}}</p>
 		</div>
 		<div class="input-form-container">
 		{!!  Form::text(
@@ -46,15 +48,17 @@
 			$accountManager['domain_name'], 
 			[
 				'id'    => 'domain_name',
-				'placeholder' => 'Tên domain',
+				'placeholder' => trans("accountmanager::account-manager.placeholders.domain_name"),
+				'data-toggle' => 'tooltip',
+				'title' => trans("accountmanager::account-manager.validations.domain_name.required"),
 			]
 			) !!}
-			<p>Chỉ nhâp tên domain (vd: nếu là 'buslines.phanmemve.vn' thì sẽ nhập 'buslines')</p>
+			<p>{{trans("accountmanager::account-manager.forms.instruc.domain_name")}}</p>
 		</div>
 	</div>
 	<div class="d-flex mt-3">
 		<div class="label-form-container">
-			<p>Base URL (Đường dẫn module sử dụng vd: /admin , /fronend...)</p>
+			<p>{{trans("accountmanager::account-manager.labels.base_url")}}</p>
 		</div>
 		<div class="input-form-container">
 		{!!  Form::text(
@@ -62,15 +66,17 @@
 			$accountManager['base_url'], 
 			[
 				'id'    => 'base_url',
-				'placeholder' => 'Base URL',
+				'placeholder' => trans("accountmanager::account-manager.placeholders.base_url"),
+				'data-toggle' => 'tooltip',
+				'title' => trans("accountmanager::account-manager.validations.base_url.required"),
 			]
 			) !!} 
-			<p>Mặc định ("/"), nếu nhập '/dongphuoc' thì domain đầy đủ sẽ là 'express.phanmemve.vn/dongphuoc'</p>
+			<p>{{trans("accountmanager::account-manager.forms.instruc.base_url")}}</p>
 		</div>
 	</div>
 	<div class="d-flex mt-3">
 		<div class="label-form-container">
-			<p>Mã ứng dụng</p>
+			<p>{{trans("accountmanager::account-manager.labels.app_code")}}</p>
 		</div>
 		<div class="input-form-container">
 		{!!  Form::text(
@@ -78,15 +84,15 @@
 			$accountManager['app_code'], 
 			[
 				'id'    => 'app_code',
-				'placeholder' => 'Mã ứng dụng',
+				'placeholder' => trans("accountmanager::account-manager.placeholders.app_code"),
 			]
 			) !!} 
-			<p>Mã ứng dụng là tên công ty viết liền không dấu</p>
+			<p>{{trans("accountmanager::account-manager.forms.instruc.app_code")}}</p>
 		</div>
 	</div>
 	<div class="d-flex mt-3">
 		<div class="label-form-container">
-			<p>Tên ứng dụng</p>
+			<p>{{trans("accountmanager::account-manager.labels.app_name")}}</p>
 		</div>
 		<div class="input-form-container">
 		{!!  Form::text(
@@ -94,15 +100,14 @@
 			$accountManager['app_name'], 
 			[
 				'id'    => 'app_name',
-				'placeholder' => 'Tên ứng dụng',
+				'placeholder' => trans("accountmanager::account-manager.placeholders.app_name"),
 			]
 			) !!} 
-			<p></p>
 		</div>
 	</div>
 	<div class="d-flex mt-3">
 		<div class="label-form-container">
-			<p>Chọn loại ứng dụng</p>
+			<p>{{trans("accountmanager::account-manager.labels.app_brand")}}</p>
 		</div>
 		<div class="input-radio-form-container">
 			<div>
@@ -133,7 +138,7 @@
 	</div>
 	<div class="d-flex mt-3">
 		<div class="label-form-container">
-			<p>Site name</p>
+			<p>{{trans("accountmanager::account-manager.labels.site_name")}}</p>
 		</div>
 		<div class="input-form-container">
 			{!!  Form::text(
@@ -141,10 +146,10 @@
 				$accountManager['site_name'], 
 				[
 					'id'    => 'site_name',
-					'placeholder' => 'Site name',
+					'placeholder' => trans("accountmanager::account-manager.placeholders.site_name"),
 				]
 				) !!} 
-				<p>Chọn tên file config phần mềm vé</p>
+				<p>{{trans("accountmanager::account-manager.forms.instruc.site_name")}}</p>
 			</div>
 		</div>
 </fieldset>

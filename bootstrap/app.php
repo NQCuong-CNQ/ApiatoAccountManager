@@ -15,6 +15,23 @@ $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
+if (!$app->runningInConsole()) {
+	$configsEnv = require(realpath(__DIR__.'/../environment.php'));
+	$host = $_SERVER ? $_SERVER["HTTP_HOST"] : "";
+	error_reporting(E_ALL ^ E_NOTICE);
+	if(
+		$configsEnv [$host]
+		&& file_exists(realpath(__DIR__.'/../'.$configsEnv[$host]))
+	){
+		$app->loadEnvironmentFrom($configsEnv[$host]);
+	} elseif (
+		$configsEnv["default"]
+		&& file_exists(realpath(__DIR__.'/../'.$configsEnv["default"]))
+		) {
+		$app->loadEnvironmentFrom($configsEnv["default"]);
+	}
+}
+
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces

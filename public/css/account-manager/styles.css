@@ -66,3 +66,7 @@ body{
 .input-radio-form-container input{
 	margin-top: 0.4rem;
 }
+.required{
+	border-color: red;
+	box-shadow: none;
+}

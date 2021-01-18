@@ -52,8 +52,29 @@ class CreateAccountManagerRequest extends Request
     public function rules()
     {
         return [
-            // 'id' => 'required',
-            // '{user-input}' => 'required|max:255',
+            // company_name : Tên công ty
+            'company_name' => 'required',
+            // domain_name : Tên domain
+            'domain_name' => 'required',
+            // base_url : Địa chỉ url
+            'base_url' => 'required',
+        ];
+    }
+
+    /**
+     * Định nghĩa các thông báo lỗi của Request
+     * @return  array
+     */
+    public function messages()
+    {
+        return [
+            // Tên công ty
+            'company_name.required'   => trans("accountmanager::account-manager.validations.company_name.required"),
+            // Tên domain
+            'domain_name.required'     => trans("accountmanager::account-manager.validations.domain_name.required"),
+
+            // Địa chỉ url
+            'base_url.required'   => trans("accountmanager::account-manager.validations.base_url.required"),
         ];
     }
 

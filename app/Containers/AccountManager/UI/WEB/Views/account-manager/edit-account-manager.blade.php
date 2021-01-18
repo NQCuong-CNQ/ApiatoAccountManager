@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="d-flex justify-content-between">
-  <h3>Thông tin ứng dụng</h3>
+  <h3>{{trans("accountmanager::account-manager.headers.edit")}}</h3>
   <div class="d-flex">
-    <button onclick="location.href='{{ route ('web_accountmanager_show', [$accountManager->id])}}'" class="btn-back mr-3">Quay về</button>
+    <button onclick="location.href='{{ route ('web_accountmanager_show', [$accountManager->id])}}'" class="btn-back mr-3">{{trans("accountmanager::account-manager.buttons.back")}}</button>
 
-    <button id="btn-update" class="btn-save">Lưu</button>
+    <button id="btn-update" class="btn-save">{{trans("accountmanager::account-manager.buttons.save")}}</button>
   </div>
 </div>
 

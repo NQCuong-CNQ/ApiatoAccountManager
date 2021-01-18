@@ -28,7 +28,7 @@ class AccountManagerApi extends BaseApi{
 
         if (!api) {
 
-            throw new Error("Không tìm thấy Api này!");
+            throw new Error(trans("accountmanager::account-manager.errors.api_not_found"));
         }
 
     	return this.request(
@@ -56,7 +56,7 @@ class AccountManagerApi extends BaseApi{
 
         if (!api) {
 
-            throw new Error("Không tìm thấy Api này!");
+            throw new Error(trans("accountmanager::account-manager.errors.api_not_found"));
         }
 
         return this.request(
@@ -83,7 +83,7 @@ class AccountManagerApi extends BaseApi{
 
         if (!api) {
 
-            throw new Error("Không tìm thấy Api này!");
+            throw new Error(trans("accountmanager::account-manager.errors.api_not_found"));
         }
         
         return this.request(

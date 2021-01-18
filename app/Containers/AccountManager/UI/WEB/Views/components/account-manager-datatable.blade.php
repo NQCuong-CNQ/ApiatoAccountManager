@@ -1,15 +1,15 @@
 <table id="datatable-list-all" class="table table-striped table-bordered" cellspacing="0" width="100%">
   <thead>
     <tr class="table-header">
-      <th class="th-sm">Id
+      <th class="th-sm">{{trans("accountmanager::account-manager.labels.id")}}
       </th>
-      <th class="th-sm">Tên CTy
+      <th class="th-sm">{{trans("accountmanager::account-manager.labels.company_name")}}
       </th>
-      <th class="th-sm">Tên Domain
+      <th class="th-sm">{{trans("accountmanager::account-manager.labels.domain_name")}}
       </th>
-      <th class="th-sm">Tên Ứng Dụng
+      <th class="th-sm">{{trans("accountmanager::account-manager.labels.app_name")}}
       </th>
-      <th class="th-sm">Bắt đầu sử dụng
+      <th class="th-sm">{{trans("accountmanager::account-manager.labels.start_date")}}
       </th>
     </tr>
   </thead>

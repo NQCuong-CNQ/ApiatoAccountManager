@@ -81,7 +81,7 @@ class AccountManagerController extends ApiController
             'success'     => true,
             'STATUS'      => "OK",
             'status_code' => 200,
-            'message'     => 'Thêm mới thành công',
+            'message'     => trans("accountmanager::account-manager.messages.add_new_success"),
             'data'        => $data,
             // 'pagination'  => $pagination,
             // 'meta'        => $meta,
@@ -112,7 +112,7 @@ class AccountManagerController extends ApiController
             'success'       => true,
             'STATUS'        => "OK",
             'status_code'   => 200,
-            'message'       => 'Tìm kiếm thành công',
+            'message'       => trans("accountmanager::account-manager.messages.find_success"),
             'data'          => $AccountManager,
         ], 200);
 
@@ -167,7 +167,7 @@ class AccountManagerController extends ApiController
             'success'     => true,
             'STATUS'      => "OK",
             'status_code' => 200,
-            'message'     => 'Lấy dữ liệu thành công',
+            'message'     => trans("accountmanager::account-manager.messages.get_all_success"),
             'data'        => $data,
             'pagination'  => $pagination,
             'meta'        => $meta,
@@ -217,7 +217,7 @@ class AccountManagerController extends ApiController
             'success'       => true,
             'STATUS'        => "OK",
             'status_code'   => 200,
-            'message'       => 'Câp nhật thành công',
+            'message'       => trans("accountmanager::account-manager.messages.update_success"),
             'data'          => $accountManager,
         ], 200);
     }
@@ -242,7 +242,7 @@ class AccountManagerController extends ApiController
             'success'       => true,
             'STATUS'        => "OK",
             'status_code'   => 200,
-            'message'       => 'Đã xóa thành công',
+            'message'       => trans("accountmanager::account-manager.messages.delete_success"),
         ], 200);
     }
 }

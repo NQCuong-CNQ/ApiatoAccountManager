@@ -37,7 +37,7 @@ import AccountManagerApi from '../account-manager/AccountManagerApi';
 
 	 	    Swal.fire({
 			  icon: 'success',
-			  title: 'Đã cập nhật!',
+			  title: "Đã thêm thành công!",
 			  showConfirmButton: true,
 			  timer: 1000
 			})
@@ -129,6 +129,7 @@ import AccountManagerApi from '../account-manager/AccountManagerApi';
 	  		// sự kiện bấm nút thêm mới
 			$('#btn-addnew').click(function() {
 			  	self.onCreate(event);
+			  	self.validateInput();
 			});
 	  		// sự kiện bấm nút xóa
 			$('#btn-delete').click(function() {
@@ -147,6 +148,7 @@ import AccountManagerApi from '../account-manager/AccountManagerApi';
          * @purpose: 
          * - mục đích:
          *      lấy giá trị của app_brand và set lên form trên giao diện
+         *      do form::radio nên không thể tự lấy val được
          * @author: Cường
          * @since: 18-01-2021
         */
@@ -167,6 +169,32 @@ import AccountManagerApi from '../account-manager/AccountManagerApi';
 	          case 'MANUAL': $('#app_brand_m').prop('checked', true); 
 	          break;
 	        }
+		}
+
+		/**
+         * @todo: Hàm validate form
+         * @purpose: 
+         * - mục đích:
+         *      kiểm tra field required nào chưa được nhập thì thực hiện thông báo
+         *      thuộc tính required của input không dùng được do không dùng submit của form
+         * @author: Cường
+         * @since: 18-01-2021
+        */
+		validateInput(){
+			if($('#company_name').val()==''){
+				$('#company_name').tooltip('show');
+				$('#company_name').addClass('required');
+			}
+
+			if($('#domain_name').val()==''){
+				$('#domain_name').tooltip('show');
+				$('#domain_name').addClass('required');
+			}
+
+			if($('#base_url').val()==''){
+				$('#base_url').tooltip('show');
+				$('#base_url').addClass('required');
+			}
 		}
 	}
 
