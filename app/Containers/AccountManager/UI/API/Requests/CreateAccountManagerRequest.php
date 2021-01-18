@@ -72,7 +72,6 @@ class CreateAccountManagerRequest extends Request
             'company_name.required'   => trans("accountmanager::account-manager.validations.company_name.required"),
             // Tên domain
             'domain_name.required'     => trans("accountmanager::account-manager.validations.domain_name.required"),
-
             // Địa chỉ url
             'base_url.required'   => trans("accountmanager::account-manager.validations.base_url.required"),
         ];
