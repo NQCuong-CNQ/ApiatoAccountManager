@@ -1,7 +1,7 @@
 <?php
 /**
  * @todo task xử lý nghiệp vụ lấy danh sách tất cả các AccountManager từ CSDL.
- * @author Cương
+ * @author Hoàng
  * @input Params $params
  * @output array entity AccountManager lấy được
  * @algorithm

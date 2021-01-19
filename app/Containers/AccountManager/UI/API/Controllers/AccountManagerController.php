@@ -122,7 +122,7 @@ class AccountManagerController extends ApiController
     /**
      * @todo Lấy danh sách account manager
      * - lấy danh sách tất cả account manager
-     * @author Cường
+     * @author Hoàng
      * @param GetAllAccountManagersRequest $request
      * - company_name : Tên công ty
      * - app_name : Tên ứng dụng
