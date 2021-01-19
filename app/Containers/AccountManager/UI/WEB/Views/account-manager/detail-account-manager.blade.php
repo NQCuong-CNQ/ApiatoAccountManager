@@ -1,6 +1,3 @@
-@extends('layouts.master')
-
-@section('content')
 <div class="d-flex justify-content-between">
   <h3>{{trans("accountmanager::account-manager.headers.detail")}}</h3>
   <div class="d-flex">

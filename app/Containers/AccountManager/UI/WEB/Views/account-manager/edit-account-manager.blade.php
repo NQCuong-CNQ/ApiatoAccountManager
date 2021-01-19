@@ -1,6 +1,3 @@
-@extends('layouts.master')
-
-@section('content')
 <div class="d-flex justify-content-between">
   <h3>{{trans("accountmanager::account-manager.headers.edit")}}</h3>
   <div class="d-flex">
@@ -35,4 +32,3 @@
     Layout::js(mix('js/account-manager/account-manager/form-account-manager.js'));
 @endphp
 
-@endsection

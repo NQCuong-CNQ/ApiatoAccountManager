@@ -14,6 +14,7 @@ use App\Containers\AccountManager\UI\WEB\Requests\FindAccountManagerByIdRequest;
 use App\Containers\AccountManager\UI\WEB\Requests\EditAccountManagerRequest;
 use App\Ship\Parents\Controllers\WebController;
 use Apiato\Core\Foundation\Facades\Apiato;
+use Layout\Content;
 
 /**
  * Class AccountManagerController
@@ -30,9 +31,9 @@ class AccountManagerController extends WebController
      * @since 16-01-2021
      * @return view
      */
-    public function getAllAccountManagers(GetAllAccountManagersRequest $request)
+    public function getAllAccountManagers(Content $content, GetAllAccountManagersRequest $request)
     {
-        return view('accountmanager::account-manager.account-manager');
+        return $content->view('accountmanager::account-manager.account-manager');
     }
 
     /**
@@ -47,11 +48,14 @@ class AccountManagerController extends WebController
      *  - Gọi đến action FindAccountManagerByIdAction --> task FindAccountManagerByIdTask
      *  - Giao tiếp với CSLD tbl_domain_config bằng AccountManagerRepository để lấy chi tiết account manager bằng $id 
      */
-    public function findAccountManagerById(FindAccountManagerByIdRequest $request, $id)
+    public function findAccountManagerById(Content $content, FindAccountManagerByIdRequest $request, $id)
     {
         $accountManager = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$id]);
 
-        return view('accountmanager::account-manager.detail-account-manager')->with('accountManager', $accountManager);
+        return $content->view('accountmanager::account-manager.detail-account-manager', 
+            [
+                'accountManager' => $accountManager
+            ]);
     }
 
     /**
@@ -65,9 +69,9 @@ class AccountManagerController extends WebController
      * _ phần này không có xử lý nghiệp vụ nên không gọi Action và Task
      * _ Chỉ trả về view form cho người dùng thêm mới account manager
      */
-    public function createAccountManager(CreateAccountManagerRequest $request)
+    public function createAccountManager(Content $content, CreateAccountManagerRequest $request)
     {
-        return view('accountmanager::account-manager.addnew-account-manager');
+        return $content->view('accountmanager::account-manager.addnew-account-manager');
     }
 
     /**
@@ -82,11 +86,13 @@ class AccountManagerController extends WebController
      *  - Gọi đến action FindAccountManagerByIdAction --> task FindAccountManagerByIdTask
      *  - Giao tiếp với CSLD tbl_domain_config bằng AccountManagerRepository để lấy chi tiết account manager bằng $id
      */
-    public function editAccountManager(EditAccountManagerRequest $request, $id)
+    public function editAccountManager(Content $content, EditAccountManagerRequest $request, $id)
     {
         $accountManager = Apiato::call('AccountManager@FindAccountManagerByIdAction', [$id]);
 
-        return view('accountmanager::account-manager.edit-account-manager')->with('accountManager', $accountManager);
+        return $content->view('accountmanager::account-manager.edit-account-manager', [
+            'accountManager' => $accountManager
+        ]);
     }
 
 }
