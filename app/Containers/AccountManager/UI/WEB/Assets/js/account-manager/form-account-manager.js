@@ -138,6 +138,7 @@ import AccountManagerApi from '../account-manager/AccountManagerApi';
 	  		// sự kiện bấm nút lưu
 			$('#btn-update').click(function() {
 			  	self.onUpdate(event);
+			  	self.validateInput();
 			});
 
 			self.getRadioBtnValue();
